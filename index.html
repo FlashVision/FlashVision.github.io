@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashVision — Ultra-Lightweight Vision AI for Edge Devices</title>
+    <meta name="description" content="Ultra-lightweight real-time vision AI for edge devices. Object detection, segmentation, classification, OCR, and tracking. 0.3M-3M params, 100+ FPS, LoRA fine-tuning.">
+    <meta name="keywords" content="computer vision, edge AI, object detection, segmentation, OCR, tracking, PyTorch, LoRA, lightweight, real-time">
+    <meta property="og:title" content="FlashVision — Ultra-Lightweight Vision AI">
+    <meta property="og:description" content="0.3M-3M params, 100+ FPS, LoRA fine-tuning. Detection, segmentation, classification, OCR, tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flashvision.github.io">
+    <link rel="icon" href="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-brand">
+                <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="32" height="32">
+                <span>FlashVision</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#quickstart">Quick Start</a></li>
+                <li><a href="#benchmarks">Benchmarks</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://github.com/FlashVision" class="btn btn-nav" target="_blank">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="container">
+            <div class="hero-badge">Open Source · MIT Licensed</div>
+            <h1 class="hero-title">
+                Vision AI That Runs
+                <span class="gradient-text">Everywhere, Instantly</span>
+            </h1>
+            <p class="hero-subtitle">
+                Ultra-lightweight models for real-time inference on edge devices.
+                Detection, segmentation, classification, OCR & tracking — all under 3M parameters at 100+ FPS.
+            </p>
+
+            <div class="hero-stats" id="heroStats">
+                <div class="stat" data-target="0.3" data-suffix="M+" data-label="Min Params">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Min Params</div>
+                </div>
+                <div class="stat" data-target="100" data-suffix="+" data-label="FPS">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">FPS on Edge</div>
+                </div>
+                <div class="stat" data-target="6" data-suffix="" data-label="Projects">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat" data-target="5" data-suffix="min" data-label="LoRA">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">LoRA Fine-tune</div>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="https://github.com/FlashVision/FlashDet" class="btn btn-primary">
+                    Get Started
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#quickstart" class="btn btn-ghost">Documentation</a>
+            </div>
+
+            <div class="hero-install">
+                <code id="installCmd">$ pip install flashdet flashseg flashcls flashocr</code>
+                <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">A complete ecosystem of lightweight vision models, each optimized for a specific task.</p>
+            </div>
+
+            <div class="projects-grid">
+                <a href="https://github.com/FlashVision/FlashDet" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #6366f1;">⚡</div>
+                    <div class="project-card-content">
+                        <h3>FlashDet</h3>
+                        <p>Real-time object detection with multi-object tracking, built-in analytics solutions, and ONNX/TensorRT export.</p>
+                        <div class="project-tags">
+                            <span>0.49M – 2.44M</span>
+                            <span>100+ FPS</span>
+                            <span>COCO</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashSeg" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #ec4899;">🎨</div>
+                    <div class="project-card-content">
+                        <h3>FlashSeg</h3>
+                        <p>Semantic segmentation for background removal, lane detection, and scene parsing on edge hardware.</p>
+                        <div class="project-tags">
+                            <span>0.3M – 3.2M</span>
+                            <span>80+ FPS</span>
+                            <span>21 classes</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashCls" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #f59e0b;">🏷️</div>
+                    <div class="project-card-content">
+                        <h3>FlashCls</h3>
+                        <p>Image classification with multiple backbone support — ShuffleNet, MobileNet, EfficientNet, ConvNeXt, ViT.</p>
+                        <div class="project-tags">
+                            <span>0.35M – 2.8M</span>
+                            <span>200+ FPS</span>
+                            <span>6 backbones</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashTrack" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #10b981;">🎯</div>
+                    <div class="project-card-content">
+                        <h3>FlashTrack</h3>
+                        <p>Multi-object tracking with ReID feature encoders. ByteTrack, SORT, and DeepSORT implementations.</p>
+                        <div class="project-tags">
+                            <span>0.5M – 2.0M</span>
+                            <span>90+ FPS</span>
+                            <span>ReID</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashOCR" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #06b6d4;">📝</div>
+                    <div class="project-card-content">
+                        <h3>FlashOCR</h3>
+                        <p>Text recognition with CTC and Attention decoders. License plates, receipts, and document scanning.</p>
+                        <div class="project-tags">
+                            <span>0.4M – 2.5M</span>
+                            <span>120+ FPS</span>
+                            <span>CTC + Attn</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashDownUP" class="project-card" data-aos>
+                    <div class="project-card-icon" style="--accent: #8b5cf6;">🔄</div>
+                    <div class="project-card-content">
+                        <h3>FlashDownUP</h3>
+                        <p>Lossless & lossy image resampling — Space-to-Depth, DWT Haar wavelet, PixelShuffle, bilinear, bicubic.</p>
+                        <div class="project-tags">
+                            <span>S2D / D2S</span>
+                            <span>DWT Haar</span>
+                            <span>Lossless</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why FlashVision</h2>
+                <p class="section-subtitle">Built from the ground up for production edge AI deployment.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">🚀</div>
+                    <h3>100+ FPS Real-Time</h3>
+                    <p>Optimized ShuffleNetV2 + GhostPAN architecture achieves real-time on Jetson Nano, Raspberry Pi, and mobile NPUs.</p>
+                </div>
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">🪶</div>
+                    <h3>Ultra-Lightweight</h3>
+                    <p>Models range from 0.3M to 3M parameters. Deploy on microcontrollers with minimal memory footprint.</p>
+                </div>
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">🎛️</div>
+                    <h3>LoRA / QLoRA</h3>
+                    <p>Adapt pretrained models to any domain in 5 minutes with Low-Rank Adaptation on a single consumer GPU.</p>
+                </div>
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">📚</div>
+                    <h3>Knowledge Distillation</h3>
+                    <p>Transfer knowledge from larger teachers. Get maximum accuracy at minimal size with our KD pipeline.</p>
+                </div>
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">📦</div>
+                    <h3>Export Anywhere</h3>
+                    <p>One-click ONNX, TensorRT, CoreML export. FP16 and INT8 quantization for maximum deployment efficiency.</p>
+                </div>
+                <div class="feature-card" data-aos>
+                    <div class="feature-icon">🔌</div>
+                    <h3>Production Solutions</h3>
+                    <p>Object counting, speed estimation, heatmaps, parking management, security alarms — ready to deploy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quickstart" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Start</h2>
+                <p class="section-subtitle">From install to inference in 60 seconds.</p>
+            </div>
+
+            <div class="code-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="detect">Detection</button>
+                    <button class="tab-btn" data-tab="train">Training</button>
+                    <button class="tab-btn" data-tab="cli">CLI</button>
+                </div>
+
+                <div class="tab-content active" id="tab-detect">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">detect.py</span>
+                        </div>
+                        <pre class="code-body"><span class="kw">from</span> flashdet <span class="kw">import</span> Predictor
+
+<span class="cmt"># Load COCO-pretrained model (auto-downloads weights)</span>
+detector = <span class="fn">Predictor</span>(pretrained_coco=<span class="lit">True</span>)
+
+<span class="cmt"># Run inference on image</span>
+detections = detector.<span class="fn">predict</span>(<span class="str">"street.jpg"</span>)
+
+<span class="kw">for</span> cls_name, score, x1, y1, x2, y2 <span class="kw">in</span> detections:
+    <span class="fn">print</span>(f<span class="str">"{cls_name}: {score:.2f} [{x1},{y1},{x2},{y2}]"</span>)
+
+<span class="cmt"># Process video with live visualization</span>
+detector.<span class="fn">predict_video</span>(<span class="str">"traffic.mp4"</span>, output_dir=<span class="str">"results/"</span>)</pre>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-train">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">train.py</span>
+                        </div>
+                        <pre class="code-body"><span class="kw">from</span> flashdet <span class="kw">import</span> Trainer
+
+<span class="cmt"># Fine-tune with LoRA on custom dataset</span>
+trainer = <span class="fn">Trainer</span>(
+    pretrained_coco=<span class="lit">True</span>,
+    lora=<span class="lit">True</span>,
+    lora_rank=<span class="num">8</span>,
+    epochs=<span class="num">50</span>,
+    batch_size=<span class="num">32</span>,
+    train_images=<span class="str">"data/train"</span>,
+    val_images=<span class="str">"data/val"</span>,
+    amp=<span class="lit">True</span>,
+)
+
+<span class="cmt"># Starts training (~5 min on single GPU)</span>
+results = trainer.<span class="fn">train</span>()
+<span class="fn">print</span>(f<span class="str">"Best mAP@0.5: {results['best_map50']:.4f}"</span>)</pre>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-cli">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">terminal</span>
+                        </div>
+                        <pre class="code-body"><span class="cmt"># Install any FlashVision package</span>
+$ pip install flashdet flashseg flashcls flashocr flashtrack
+
+<span class="cmt"># Train object detector with LoRA</span>
+$ flashdet train --pretrained-coco --lora --epochs 50
+
+<span class="cmt"># Run segmentation</span>
+$ flashseg predict --source image.jpg --model m
+
+<span class="cmt"># Export to ONNX for edge deployment</span>
+$ flashdet export --format onnx --half
+
+<span class="cmt"># Benchmark model speed</span>
+$ flashdet benchmark --model m --input-size 320</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmarks -->
+    <section id="benchmarks" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Benchmarks</h2>
+                <p class="section-subtitle">Performance across model sizes on NVIDIA Jetson Nano (INT8).</p>
+            </div>
+
+            <div class="benchmark-table-wrap">
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Task</th>
+                            <th>Params</th>
+                            <th>FLOPs</th>
+                            <th>mAP/Acc</th>
+                            <th>FPS (Jetson)</th>
+                            <th>Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FlashDet-M</strong></td>
+                            <td>Detection</td>
+                            <td>0.95M</td>
+                            <td>0.72G</td>
+                            <td>27.3 mAP</td>
+                            <td class="highlight">142</td>
+                            <td>7.0ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FlashDet-M-1.5x</strong></td>
+                            <td>Detection</td>
+                            <td>2.44M</td>
+                            <td>1.98G</td>
+                            <td>31.8 mAP</td>
+                            <td class="highlight">97</td>
+                            <td>10.3ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FlashSeg-M</strong></td>
+                            <td>Segmentation</td>
+                            <td>1.1M</td>
+                            <td>0.85G</td>
+                            <td>72.4 mIoU</td>
+                            <td class="highlight">118</td>
+                            <td>8.5ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FlashCls-M</strong></td>
+                            <td>Classification</td>
+                            <td>0.58M</td>
+                            <td>0.15G</td>
+                            <td>76.2 Top-1</td>
+                            <td class="highlight">245</td>
+                            <td>4.1ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FlashOCR-M</strong></td>
+                            <td>OCR</td>
+                            <td>0.82M</td>
+                            <td>0.45G</td>
+                            <td>94.1 Acc</td>
+                            <td class="highlight">156</td>
+                            <td>6.4ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Architecture</h2>
+                <p class="section-subtitle">Shared lightweight backbone across all tasks for maximum efficiency.</p>
+            </div>
+
+            <div class="arch-pipeline">
+                <div class="arch-node">
+                    <div class="arch-node-icon">📷</div>
+                    <h4>Input</h4>
+                    <p>RGB Image</p>
+                </div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">
+                    <div class="arch-node-icon">🧠</div>
+                    <h4>ShuffleNetV2</h4>
+                    <p>Backbone</p>
+                </div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">
+                    <div class="arch-node-icon">🔀</div>
+                    <h4>GhostPAN</h4>
+                    <p>Feature Pyramid</p>
+                </div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">
+                    <div class="arch-node-icon">🎯</div>
+                    <h4>Task Head</h4>
+                    <p>Det / Seg / Cls / OCR</p>
+                </div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">
+                    <div class="arch-node-icon">✅</div>
+                    <h4>Output</h4>
+                    <p>Predictions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="40" height="40">
+                    <p>Ultra-lightweight vision AI<br>for real-time edge inference.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Projects</h4>
+                    <a href="https://github.com/FlashVision/FlashDet">FlashDet</a>
+                    <a href="https://github.com/FlashVision/FlashSeg">FlashSeg</a>
+                    <a href="https://github.com/FlashVision/FlashCls">FlashCls</a>
+                    <a href="https://github.com/FlashVision/FlashTrack">FlashTrack</a>
+                    <a href="https://github.com/FlashVision/FlashOCR">FlashOCR</a>
+                    <a href="https://github.com/FlashVision/FlashDownUP">FlashDownUP</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/FlashVision">GitHub</a>
+                    <a href="https://pypi.org/project/flashdet/">PyPI</a>
+                    <a href="https://github.com/FlashVision/FlashDet/blob/main/LICENSE">License</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>MIT License &middot; Built by <a href="https://github.com/Gaurav14cs17">Gaurav14cs17</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
