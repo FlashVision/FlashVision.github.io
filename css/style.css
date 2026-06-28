@@ -728,17 +728,23 @@ footer {
 
 /* ====== Responsive ====== */
 @media (max-width: 900px) {
+    .hero-graph { min-height: 500px; }
+
     .hero-panel {
-        left: 20px;
-        right: 20px;
-        max-width: none;
-        top: auto;
-        bottom: 40px;
+        position: relative;
+        left: auto; right: auto;
+        top: auto; bottom: auto;
         transform: none;
+        max-width: none;
+        margin: 20px;
         padding: 28px;
+        background: rgba(10, 11, 16, 0.9);
     }
 
     .hero-panel h1 { font-size: 1.6rem; }
+
+    #hero-svg { opacity: 0.3; }
+    #hero-edges-canvas { opacity: 0.3; }
 
     .clusters-grid {
         grid-template-columns: 1fr;
@@ -749,7 +755,7 @@ footer {
 
     .code-flow {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         padding: 0 20px 24px;
     }
 
@@ -757,6 +763,7 @@ footer {
         transform: rotate(90deg);
         width: 40px;
         padding: 8px 0;
+        align-self: center;
     }
 
     .code-node {
@@ -766,7 +773,11 @@ footer {
     }
 
     .pipeline-arrow { display: none; }
-    .pipeline-nodes { gap: 8px; }
+    .pipeline-nodes {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
 
     .bench-row {
         grid-template-columns: 1fr 1fr;
@@ -776,29 +787,68 @@ footer {
     .bench-bar-wrap { grid-column: 1 / -1; }
 
     .bench-graph, .pipeline-graph { padding: 0 20px 60px; }
+
+    .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
 }
 
 @media (max-width: 600px) {
     nav {
         top: 10px;
+        left: 10px;
+        right: 10px;
         padding: 6px 10px;
+        border-radius: 12px;
     }
 
     .nav-links a {
         padding: 5px 8px;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
     }
 
+    .hero-graph {
+        min-height: auto;
+        height: auto;
+        padding-top: 80px;
+    }
+
+    #hero-svg { display: none; }
+    #hero-edges-canvas { display: none; }
+
     .hero-panel {
-        left: 12px;
-        right: 12px;
-        bottom: 20px;
-        padding: 20px;
+        position: relative;
+        margin: 0 12px 20px;
+        padding: 24px;
+        border-radius: 14px;
     }
 
     .hero-panel h1 { font-size: 1.3rem; }
+    .hero-panel p { font-size: 0.82rem; }
     .hero-btns { flex-direction: column; }
+    .hero-btns a { width: 100%; justify-content: center; }
 
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .stat-badges { display: none; }
+
+    .clusters-grid { padding: 0 12px 40px; }
+    .cluster-card { padding: 20px; }
+    .cluster-links { gap: 4px; }
+    .cluster-links a { font-size: 0.75rem; padding: 6px 10px; }
+
+    .section-label { padding: 40px 12px 20px; font-size: 0.9rem; }
+
+    .code-flow { padding: 0 12px 24px; }
+    .code-node pre { font-size: 0.68rem; padding: 14px; }
+
+    .bench-graph { padding: 0 12px 40px; }
+    .bench-row { grid-template-columns: 1fr; }
+    .bench-bar-wrap { grid-column: auto; }
+
+    .pipeline-graph { padding: 0 12px 40px; }
+    .pipeline-node { width: 80px; height: 80px; }
+    .pipeline-node h4 { font-size: 0.72rem; }
+    .pipeline-node p { font-size: 0.58rem; }
+
+    footer { padding: 24px 12px 16px; }
+    .footer-links { gap: 12px; }
+    .footer-links a { font-size: 0.72rem; }
 }
