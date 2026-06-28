@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlashVision — Ultra-Lightweight Vision AI for Edge Devices</title>
-    <meta name="description" content="Ultra-lightweight real-time vision AI for edge devices. Object detection, segmentation, classification, OCR, and tracking. 0.3M-3M params, 100+ FPS, LoRA fine-tuning.">
-    <meta name="keywords" content="computer vision, edge AI, object detection, segmentation, OCR, tracking, PyTorch, LoRA, lightweight, real-time">
-    <meta property="og:title" content="FlashVision — Ultra-Lightweight Vision AI">
-    <meta property="og:description" content="0.3M-3M params, 100+ FPS, LoRA fine-tuning. Detection, segmentation, classification, OCR, tracking.">
+    <title>FlashVision — Open-Source AI Research Organization</title>
+    <meta name="description" content="FlashVision is an open-source AI research organization building 24+ projects spanning vision, language, generative models, and developer tools. From edge detection to diffusion models.">
+    <meta name="keywords" content="computer vision, AI research, open source, object detection, segmentation, LLM, diffusion models, edge AI, PyTorch, deep learning">
+    <meta property="og:title" content="FlashVision — Open-Source AI Research Organization">
+    <meta property="og:description" content="24+ open-source projects spanning vision, language, generative AI, and developer tools. Building the future of accessible AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flashvision.github.io">
     <link rel="icon" href="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png">
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Animated background particles -->
     <canvas id="particles"></canvas>
 
     <!-- Navigation -->
@@ -29,7 +28,8 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="#ecosystem">Ecosystem</a></li>
                 <li><a href="#quickstart">Quick Start</a></li>
                 <li><a href="#benchmarks">Benchmarks</a></li>
             </ul>
@@ -48,45 +48,48 @@
     <!-- Hero -->
     <header class="hero" id="hero">
         <div class="container">
-            <div class="hero-badge">Open Source · MIT Licensed</div>
+            <div class="hero-badge">Open Source · MIT Licensed · Community Driven</div>
             <h1 class="hero-title">
-                Vision AI That Runs
-                <span class="gradient-text">Everywhere, Instantly</span>
+                Building the Future of
+                <span class="gradient-text">Open-Source AI</span>
             </h1>
             <p class="hero-subtitle">
-                Ultra-lightweight models for real-time inference on edge devices.
-                Detection, segmentation, classification, OCR & tracking — all under 3M parameters at 100+ FPS.
+                An open-source research organization developing 24+ projects across computer vision, language models,
+                generative AI, and developer tools — from edge devices to cloud scale.
             </p>
 
             <div class="hero-stats" id="heroStats">
-                <div class="stat" data-target="0.3" data-suffix="M+" data-label="Min Params">
+                <div class="stat" data-target="24" data-suffix="+" data-label="Projects">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">Min Params</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat" data-target="5" data-suffix="" data-label="Categories">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat" data-target="10" data-suffix="K+" data-label="Stars">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">GitHub Stars</div>
                 </div>
                 <div class="stat" data-target="100" data-suffix="+" data-label="FPS">
                     <div class="stat-value">0</div>
                     <div class="stat-label">FPS on Edge</div>
                 </div>
-                <div class="stat" data-target="6" data-suffix="" data-label="Projects">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat" data-target="5" data-suffix="min" data-label="LoRA">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">LoRA Fine-tune</div>
-                </div>
             </div>
 
             <div class="hero-actions">
-                <a href="https://github.com/FlashVision/FlashDet" class="btn btn-primary">
-                    Get Started
+                <a href="#projects" class="btn btn-primary">
+                    Explore Projects
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <a href="#quickstart" class="btn btn-ghost">Documentation</a>
+                <a href="https://github.com/FlashVision" class="btn btn-ghost" target="_blank">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    View on GitHub
+                </a>
             </div>
 
             <div class="hero-install">
-                <code id="installCmd">$ pip install flashdet flashseg flashcls flashocr</code>
+                <code id="installCmd">$ pip install flashdet flashseg flashcls flashocr flashstudio</code>
                 <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                 </button>
@@ -94,92 +97,629 @@
         </div>
     </header>
 
+    <!-- FlashStudio Platform Spotlight -->
+    <section id="platform" class="section">
+        <div class="container">
+            <div class="platform-spotlight">
+                <div class="platform-content">
+                    <div class="platform-badge">Developer Platform</div>
+                    <h2 class="platform-title">
+                        <svg class="platform-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        FlashStudio
+                    </h2>
+                    <p class="platform-desc">
+                        Interactive training &amp; inference UI for every FlashVision model. Train, evaluate,
+                        and deploy models through an intuitive Streamlit interface — no code required.
+                    </p>
+                    <ul class="platform-features">
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            One-click training with real-time metrics
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            Visual inference on images, videos, webcam
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            Model comparison &amp; export dashboard
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            Install with <code>pip install flashstudio</code>
+                        </li>
+                    </ul>
+                    <div class="platform-actions">
+                        <a href="https://github.com/FlashVision/FlashStudio" class="btn btn-primary" target="_blank">
+                            Get FlashStudio
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="https://github.com/FlashVision/FlashStudio#readme" class="btn btn-ghost" target="_blank">Documentation</a>
+                    </div>
+                </div>
+                <div class="platform-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">terminal</span>
+                        </div>
+                        <pre class="code-body"><span class="cmt"># Install FlashStudio</span>
+$ pip install flashstudio
+
+<span class="cmt"># Launch the training UI</span>
+$ flashstudio
+
+<span class="cmt"># Opens interactive Streamlit dashboard at</span>
+<span class="cmt"># http://localhost:8501</span>
+<span class="cmt">#</span>
+<span class="cmt"># Features:</span>
+<span class="cmt">#   - Dataset management</span>
+<span class="cmt">#   - Model training with live plots</span>
+<span class="cmt">#   - Inference playground</span>
+<span class="cmt">#   - Export & deployment</span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects -->
-    <section id="projects" class="section">
+    <section id="projects" class="section section-dark">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Projects</h2>
-                <p class="section-subtitle">A complete ecosystem of lightweight vision models, each optimized for a specific task.</p>
+                <p class="section-subtitle">24+ open-source projects organized across 5 research areas, from edge vision models to generative AI.</p>
             </div>
 
-            <div class="projects-grid">
-                <a href="https://github.com/FlashVision/FlashDet" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #6366f1;">⚡</div>
+            <!-- Category Filter Tabs -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="core-vision">Core Vision</button>
+                <button class="filter-btn" data-filter="generative">Generative &amp; Foundation</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-filter="applied">Applied AI &amp; Research</button>
+                <button class="filter-btn" data-filter="developer">Developer Tools</button>
+            </div>
+
+            <!-- Project Count Indicator -->
+            <div class="filter-count" id="filterCount">
+                Showing <span id="visibleCount">24</span> of 24 projects
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- ===== Core Vision ===== -->
+                <a href="https://github.com/FlashVision/FlashDet" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #6366f1;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                        </div>
+                        <span class="project-category-tag">Core Vision</span>
+                    </div>
                     <div class="project-card-content">
                         <h3>FlashDet</h3>
-                        <p>Real-time object detection with multi-object tracking, built-in analytics solutions, and ONNX/TensorRT export.</p>
+                        <p>Real-time object detection with multi-object tracking &amp; built-in analytics. ONNX/TensorRT export ready.</p>
                         <div class="project-tags">
-                            <span>0.49M – 2.44M</span>
+                            <span>0.3M–9M params</span>
                             <span>100+ FPS</span>
-                            <span>COCO</span>
+                            <span>Detection</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://github.com/FlashVision/FlashSeg" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #ec4899;">🎨</div>
+                <a href="https://github.com/FlashVision/FlashSeg" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #ec4899;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+                        </div>
+                        <span class="project-category-tag">Core Vision</span>
+                    </div>
                     <div class="project-card-content">
                         <h3>FlashSeg</h3>
-                        <p>Semantic segmentation for background removal, lane detection, and scene parsing on edge hardware.</p>
+                        <p>Semantic segmentation for edge devices. Background removal, lane detection, scene parsing.</p>
                         <div class="project-tags">
-                            <span>0.3M – 3.2M</span>
+                            <span>Lightweight</span>
                             <span>80+ FPS</span>
-                            <span>21 classes</span>
+                            <span>Segmentation</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://github.com/FlashVision/FlashCls" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #f59e0b;">🏷️</div>
+                <a href="https://github.com/FlashVision/FlashCls" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #f59e0b;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+                        </div>
+                        <span class="project-category-tag">Core Vision</span>
+                    </div>
                     <div class="project-card-content">
                         <h3>FlashCls</h3>
-                        <p>Image classification with multiple backbone support — ShuffleNet, MobileNet, EfficientNet, ConvNeXt, ViT.</p>
+                        <p>Image classification with ShuffleNet, MobileNet, EfficientNet, ConvNeXt, and ViT backbones.</p>
                         <div class="project-tags">
-                            <span>0.35M – 2.8M</span>
+                            <span>6 Backbones</span>
                             <span>200+ FPS</span>
-                            <span>6 backbones</span>
+                            <span>Classification</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://github.com/FlashVision/FlashTrack" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #10b981;">🎯</div>
-                    <div class="project-card-content">
-                        <h3>FlashTrack</h3>
-                        <p>Multi-object tracking with ReID feature encoders. ByteTrack, SORT, and DeepSORT implementations.</p>
-                        <div class="project-tags">
-                            <span>0.5M – 2.0M</span>
-                            <span>90+ FPS</span>
-                            <span>ReID</span>
+                <a href="https://github.com/FlashVision/FlashOCR" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #06b6d4;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                         </div>
+                        <span class="project-category-tag">Core Vision</span>
                     </div>
-                </a>
-
-                <a href="https://github.com/FlashVision/FlashOCR" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #06b6d4;">📝</div>
                     <div class="project-card-content">
                         <h3>FlashOCR</h3>
-                        <p>Text recognition with CTC and Attention decoders. License plates, receipts, and document scanning.</p>
+                        <p>Text recognition with CTC + Attention decoders. License plates, receipts, documents.</p>
                         <div class="project-tags">
-                            <span>0.4M – 2.5M</span>
-                            <span>120+ FPS</span>
                             <span>CTC + Attn</span>
+                            <span>120+ FPS</span>
+                            <span>OCR</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://github.com/FlashVision/FlashDownUP" class="project-card" data-aos>
-                    <div class="project-card-icon" style="--accent: #8b5cf6;">🔄</div>
+                <a href="https://github.com/FlashVision/FlashPose" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #10b981;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v5M8 17l4-5 4 5M6 12l6 0M12 12l6 0"/></svg>
+                        </div>
+                        <span class="project-category-tag">Core Vision</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashPose</h3>
+                        <p>Real-time pose estimation for human body keypoint detection and activity recognition.</p>
+                        <div class="project-tags">
+                            <span>Keypoints</span>
+                            <span>Real-time</span>
+                            <span>Pose</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashTrack" class="project-card" data-category="core-vision" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #8b5cf6;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <span class="project-category-tag">Core Vision</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashTrack</h3>
+                        <p>Multi-object tracking with ByteTrack, SORT, DeepSORT, and BoTSORT implementations.</p>
+                        <div class="project-tags">
+                            <span>4 Trackers</span>
+                            <span>ReID</span>
+                            <span>Tracking</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== Generative & Foundation Models ===== -->
+                <a href="https://github.com/FlashVision/FlashLLM" class="project-card" data-category="generative" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #f43f5e;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <span class="project-category-tag">Generative</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashLLM</h3>
+                        <p>Lightweight language models optimized for edge deployment and fine-tuning.</p>
+                        <div class="project-tags">
+                            <span>Language</span>
+                            <span>LoRA</span>
+                            <span>LLM</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashVLM" class="project-card" data-category="generative" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #a855f7;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        </div>
+                        <span class="project-category-tag">Generative</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashVLM</h3>
+                        <p>Vision-language models that bridge image understanding with natural language.</p>
+                        <div class="project-tags">
+                            <span>Multimodal</span>
+                            <span>VLM</span>
+                            <span>Vision+Language</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashDiffusion" class="project-card" data-category="generative" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #ec4899;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+                        </div>
+                        <span class="project-category-tag">Generative</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashDiffusion</h3>
+                        <p>Diffusion models for high-quality image generation with efficient sampling strategies.</p>
+                        <div class="project-tags">
+                            <span>Diffusion</span>
+                            <span>Generation</span>
+                            <span>Image Synthesis</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashVideo" class="project-card" data-category="generative" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #14b8a6;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                        <span class="project-category-tag">Generative</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashVideo</h3>
+                        <p>Video understanding &amp; generation. Temporal modeling and video synthesis.</p>
+                        <div class="project-tags">
+                            <span>Video</span>
+                            <span>Temporal</span>
+                            <span>Understanding</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/Flash3D" class="project-card" data-category="generative" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #6366f1;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span class="project-category-tag">Generative</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Flash3D</h3>
+                        <p>3D vision and reconstruction. Point clouds, mesh generation, and spatial understanding.</p>
+                        <div class="project-tags">
+                            <span>3D Vision</span>
+                            <span>Reconstruction</span>
+                            <span>NeRF</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== Infrastructure & Optimization ===== -->
+                <a href="https://github.com/FlashVision/FlashOptim" class="project-card" data-category="infrastructure" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #f59e0b;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <span class="project-category-tag">Infrastructure</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashOptim</h3>
+                        <p>Model optimization &amp; compression. Pruning, quantization, and knowledge distillation.</p>
+                        <div class="project-tags">
+                            <span>Pruning</span>
+                            <span>Quantization</span>
+                            <span>Compression</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashEdge" class="project-card" data-category="infrastructure" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #10b981;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                        </div>
+                        <span class="project-category-tag">Infrastructure</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashEdge</h3>
+                        <p>Edge deployment toolkit. Deploy to Jetson, Raspberry Pi, mobile, and microcontrollers.</p>
+                        <div class="project-tags">
+                            <span>Jetson</span>
+                            <span>RPi</span>
+                            <span>Edge Deploy</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashInfer" class="project-card" data-category="infrastructure" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #06b6d4;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <span class="project-category-tag">Infrastructure</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashInfer</h3>
+                        <p>High-performance inference engine with ONNX, TensorRT, and CoreML backends.</p>
+                        <div class="project-tags">
+                            <span>ONNX</span>
+                            <span>TensorRT</span>
+                            <span>Inference</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashDownUP" class="project-card" data-category="infrastructure" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #8b5cf6;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                        </div>
+                        <span class="project-category-tag">Infrastructure</span>
+                    </div>
                     <div class="project-card-content">
                         <h3>FlashDownUP</h3>
-                        <p>Lossless & lossy image resampling — Space-to-Depth, DWT Haar wavelet, PixelShuffle, bilinear, bicubic.</p>
+                        <p>Image resampling with Space-to-Depth, DWT Haar wavelet, PixelShuffle, and more.</p>
                         <div class="project-tags">
                             <span>S2D / D2S</span>
-                            <span>DWT Haar</span>
+                            <span>DWT</span>
                             <span>Lossless</span>
                         </div>
                     </div>
                 </a>
+
+                <a href="https://github.com/FlashVision/FlashFusion" class="project-card" data-category="infrastructure" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #f43f5e;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.59 13.51l6.83 6.83M15.41 4.66l-6.82 6.83"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+                        </div>
+                        <span class="project-category-tag">Infrastructure</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashFusion</h3>
+                        <p>Multi-modal fusion strategies for combining vision, language, and sensor modalities.</p>
+                        <div class="project-tags">
+                            <span>Multi-Modal</span>
+                            <span>Fusion</span>
+                            <span>Cross-Attention</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== Applied AI & Research ===== -->
+                <a href="https://github.com/FlashVision/FlashMed" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #ef4444;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashMed</h3>
+                        <p>Medical image analysis for X-ray, CT, MRI segmentation and diagnostic assistance.</p>
+                        <div class="project-tags">
+                            <span>Medical</span>
+                            <span>Diagnostic</span>
+                            <span>Healthcare</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashRAG" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #a855f7;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashRAG</h3>
+                        <p>Retrieval-augmented generation with efficient vector search and context retrieval.</p>
+                        <div class="project-tags">
+                            <span>RAG</span>
+                            <span>Retrieval</span>
+                            <span>Generation</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashAudio" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #14b8a6;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashAudio</h3>
+                        <p>Audio and speech processing. Speech recognition, TTS, and audio classification.</p>
+                        <div class="project-tags">
+                            <span>Speech</span>
+                            <span>Audio</span>
+                            <span>TTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashAgent" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #6366f1;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.27A7 7 0 0 1 14 22h-4a7 7 0 0 1-6.73-3H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashAgent</h3>
+                        <p>AI agent framework for autonomous task execution with tool use and planning.</p>
+                        <div class="project-tags">
+                            <span>Agents</span>
+                            <span>Planning</span>
+                            <span>Tool Use</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/VisionRL" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #f59e0b;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>VisionRL</h3>
+                        <p>Reinforcement learning for vision tasks. Visual navigation and robot learning.</p>
+                        <div class="project-tags">
+                            <span>RL</span>
+                            <span>Vision</span>
+                            <span>Navigation</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/DINO_Teacher" class="project-card" data-category="applied" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #ec4899;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <span class="project-category-tag">Applied AI</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>DINO_Teacher</h3>
+                        <p>Knowledge distillation with DINO self-supervised features for efficient model training.</p>
+                        <div class="project-tags">
+                            <span>DINO</span>
+                            <span>Distillation</span>
+                            <span>Self-Supervised</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== Developer Tools ===== -->
+                <a href="https://github.com/FlashVision/FlashStudio" class="project-card project-card-featured" data-category="developer" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #6366f1;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <span class="project-category-tag tag-featured">Platform</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashStudio</h3>
+                        <p>Interactive Training &amp; Inference UI. Streamlit-powered dashboard for the entire FlashVision ecosystem.</p>
+                        <div class="project-tags">
+                            <span>pip install</span>
+                            <span>Streamlit</span>
+                            <span>UI</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/FlashVision/FlashTrain" class="project-card" data-category="developer" data-aos>
+                    <div class="project-card-header">
+                        <div class="project-card-icon" style="--accent: #10b981;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <span class="project-category-tag">Developer Tools</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>FlashTrain</h3>
+                        <p>Training utilities with LoRA/QLoRA, mixed precision, distributed training, and experiment tracking.</p>
+                        <div class="project-tags">
+                            <span>LoRA</span>
+                            <span>AMP</span>
+                            <span>Training</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section id="ecosystem" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The FlashVision Ecosystem</h2>
+                <p class="section-subtitle">Every project is designed to work together. Train with FlashTrain, optimize with FlashOptim, deploy with FlashEdge, and manage it all from FlashStudio.</p>
+            </div>
+
+            <div class="ecosystem-diagram">
+                <div class="eco-ring eco-ring-outer">
+                    <div class="eco-node eco-node-top" data-label="FlashDet">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-topright" data-label="FlashSeg">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-right" data-label="FlashLLM">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-bottomright" data-label="FlashDiffusion">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-bottom" data-label="FlashMed">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-bottomleft" data-label="FlashAudio">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-left" data-label="FlashCls">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+                    </div>
+                    <div class="eco-node eco-node-topleft" data-label="FlashOCR">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                    </div>
+                </div>
+
+                <div class="eco-ring eco-ring-middle">
+                    <div class="eco-mid-node eco-mid-top" data-label="FlashOptim">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="eco-mid-node eco-mid-right" data-label="FlashInfer">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="eco-mid-node eco-mid-bottom" data-label="FlashEdge">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                    </div>
+                    <div class="eco-mid-node eco-mid-left" data-label="FlashTrain">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                </div>
+
+                <div class="eco-center">
+                    <div class="eco-center-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <span class="eco-center-label">FlashStudio</span>
+                    <span class="eco-center-sublabel">Central Platform</span>
+                </div>
+            </div>
+
+            <!-- Ecosystem Flow Cards -->
+            <div class="eco-flow">
+                <div class="eco-flow-card" data-aos>
+                    <div class="eco-flow-number">1</div>
+                    <h4>Build</h4>
+                    <p>Choose from 24+ model architectures across vision, language, and generative AI.</p>
+                </div>
+                <div class="eco-flow-connector">
+                    <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="eco-flow-card" data-aos>
+                    <div class="eco-flow-number">2</div>
+                    <h4>Train</h4>
+                    <p>Fine-tune with FlashTrain's LoRA/QLoRA pipeline, or use FlashStudio's visual UI.</p>
+                </div>
+                <div class="eco-flow-connector">
+                    <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="eco-flow-card" data-aos>
+                    <div class="eco-flow-number">3</div>
+                    <h4>Optimize</h4>
+                    <p>Compress and quantize with FlashOptim. Prune, distill, and export to ONNX/TensorRT.</p>
+                </div>
+                <div class="eco-flow-connector">
+                    <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="eco-flow-card" data-aos>
+                    <div class="eco-flow-number">4</div>
+                    <h4>Deploy</h4>
+                    <p>Ship to edge with FlashEdge, or serve at scale with FlashInfer's inference engine.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -189,39 +729,51 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why FlashVision</h2>
-                <p class="section-subtitle">Built from the ground up for production edge AI deployment.</p>
+                <p class="section-subtitle">Built from the ground up for production AI — from research to deployment.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">🚀</div>
-                    <h3>100+ FPS Real-Time</h3>
-                    <p>Optimized ShuffleNetV2 + GhostPAN architecture achieves real-time on Jetson Nano, Raspberry Pi, and mobile NPUs.</p>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--accent-hover)" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Real-Time Performance</h3>
+                    <p>100+ FPS inference on edge devices. Optimized architectures like ShuffleNetV2 + GhostPAN for maximum throughput.</p>
                 </div>
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">🪶</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+                    </div>
                     <h3>Ultra-Lightweight</h3>
-                    <p>Models range from 0.3M to 3M parameters. Deploy on microcontrollers with minimal memory footprint.</p>
+                    <p>Models from 0.3M to 9M parameters. Deploy on microcontrollers, phones, and embedded hardware.</p>
                 </div>
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">🎛️</div>
-                    <h3>LoRA / QLoRA</h3>
-                    <p>Adapt pretrained models to any domain in 5 minutes with Low-Rank Adaptation on a single consumer GPU.</p>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <h3>LoRA / QLoRA Fine-Tuning</h3>
+                    <p>Adapt any model to your domain in minutes with Low-Rank Adaptation on a single consumer GPU.</p>
                 </div>
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">📚</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
                     <h3>Knowledge Distillation</h3>
-                    <p>Transfer knowledge from larger teachers. Get maximum accuracy at minimal size with our KD pipeline.</p>
+                    <p>Transfer knowledge from large teachers via DINO_Teacher. Maximum accuracy at minimal model size.</p>
                 </div>
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">📦</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--pink)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
                     <h3>Export Anywhere</h3>
-                    <p>One-click ONNX, TensorRT, CoreML export. FP16 and INT8 quantization for maximum deployment efficiency.</p>
+                    <p>One-click ONNX, TensorRT, CoreML export with FP16 and INT8 quantization support.</p>
                 </div>
                 <div class="feature-card" data-aos>
-                    <div class="feature-icon">🔌</div>
-                    <h3>Production Solutions</h3>
-                    <p>Object counting, speed estimation, heatmaps, parking management, security alarms — ready to deploy.</p>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="var(--purple)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>FlashStudio Platform</h3>
+                    <p>Visual training and inference UI. Manage datasets, experiments, and deployments from a single dashboard.</p>
                 </div>
             </div>
         </div>
@@ -239,6 +791,7 @@
                 <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="detect">Detection</button>
                     <button class="tab-btn" data-tab="train">Training</button>
+                    <button class="tab-btn" data-tab="studio">FlashStudio</button>
                     <button class="tab-btn" data-tab="cli">CLI</button>
                 </div>
 
@@ -287,6 +840,30 @@ trainer = <span class="fn">Trainer</span>(
 <span class="cmt"># Starts training (~5 min on single GPU)</span>
 results = trainer.<span class="fn">train</span>()
 <span class="fn">print</span>(f<span class="str">"Best mAP@0.5: {results['best_map50']:.4f}"</span>)</pre>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-studio">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">terminal</span>
+                        </div>
+                        <pre class="code-body"><span class="cmt"># Install FlashStudio</span>
+$ pip install flashstudio
+
+<span class="cmt"># Launch the interactive UI</span>
+$ flashstudio
+
+<span class="cmt"># Or use in Python</span>
+<span class="kw">from</span> flashstudio <span class="kw">import</span> launch
+
+<span class="cmt"># Start with custom config</span>
+<span class="fn">launch</span>(
+    model=<span class="str">"flashdet"</span>,
+    port=<span class="num">8501</span>,
+    share=<span class="lit">True</span>,  <span class="cmt"># Create public URL</span>
+)</pre>
                     </div>
                 </div>
 
@@ -389,74 +966,62 @@ $ flashdet benchmark --model m --input-size 320</pre>
         </div>
     </section>
 
-    <!-- Architecture -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Architecture</h2>
-                <p class="section-subtitle">Shared lightweight backbone across all tasks for maximum efficiency.</p>
-            </div>
-
-            <div class="arch-pipeline">
-                <div class="arch-node">
-                    <div class="arch-node-icon">📷</div>
-                    <h4>Input</h4>
-                    <p>RGB Image</p>
-                </div>
-                <div class="arch-connector"></div>
-                <div class="arch-node">
-                    <div class="arch-node-icon">🧠</div>
-                    <h4>ShuffleNetV2</h4>
-                    <p>Backbone</p>
-                </div>
-                <div class="arch-connector"></div>
-                <div class="arch-node">
-                    <div class="arch-node-icon">🔀</div>
-                    <h4>GhostPAN</h4>
-                    <p>Feature Pyramid</p>
-                </div>
-                <div class="arch-connector"></div>
-                <div class="arch-node">
-                    <div class="arch-node-icon">🎯</div>
-                    <h4>Task Head</h4>
-                    <p>Det / Seg / Cls / OCR</p>
-                </div>
-                <div class="arch-connector"></div>
-                <div class="arch-node">
-                    <div class="arch-node-icon">✅</div>
-                    <h4>Output</h4>
-                    <p>Predictions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="40" height="40">
-                    <p>Ultra-lightweight vision AI<br>for real-time edge inference.</p>
+                    <div class="footer-brand-top">
+                        <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="40" height="40">
+                        <span class="footer-brand-name">FlashVision</span>
+                    </div>
+                    <p>Open-source AI research organization building the future of accessible, production-ready AI — from edge devices to cloud scale.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/FlashVision" target="_blank" aria-label="GitHub">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        </a>
+                        <a href="https://pypi.org/project/flashdet/" target="_blank" aria-label="PyPI">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.042 0L5.071 3.878v3.756L12.042 3.756 19 7.634V3.878L12.042 0zM5.071 8.445L12.042 12.2l6.958-3.756-6.958-3.878-6.971 3.879zM5.071 16.245l6.971 3.878 6.958-3.878v-3.756L12.042 16.245 5.071 12.489v3.756zM12.042 24l6.958-3.878v-3.756l-6.958 3.756-6.971-3.756v3.756L12.042 24z"/></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Projects</h4>
+                    <h4>Core Vision</h4>
                     <a href="https://github.com/FlashVision/FlashDet">FlashDet</a>
                     <a href="https://github.com/FlashVision/FlashSeg">FlashSeg</a>
                     <a href="https://github.com/FlashVision/FlashCls">FlashCls</a>
-                    <a href="https://github.com/FlashVision/FlashTrack">FlashTrack</a>
                     <a href="https://github.com/FlashVision/FlashOCR">FlashOCR</a>
-                    <a href="https://github.com/FlashVision/FlashDownUP">FlashDownUP</a>
+                    <a href="https://github.com/FlashVision/FlashPose">FlashPose</a>
+                    <a href="https://github.com/FlashVision/FlashTrack">FlashTrack</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Resources</h4>
-                    <a href="https://github.com/FlashVision">GitHub</a>
-                    <a href="https://pypi.org/project/flashdet/">PyPI</a>
-                    <a href="https://github.com/FlashVision/FlashDet/blob/main/LICENSE">License</a>
+                    <h4>Generative AI</h4>
+                    <a href="https://github.com/FlashVision/FlashLLM">FlashLLM</a>
+                    <a href="https://github.com/FlashVision/FlashVLM">FlashVLM</a>
+                    <a href="https://github.com/FlashVision/FlashDiffusion">FlashDiffusion</a>
+                    <a href="https://github.com/FlashVision/FlashVideo">FlashVideo</a>
+                    <a href="https://github.com/FlashVision/Flash3D">Flash3D</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Infrastructure</h4>
+                    <a href="https://github.com/FlashVision/FlashOptim">FlashOptim</a>
+                    <a href="https://github.com/FlashVision/FlashEdge">FlashEdge</a>
+                    <a href="https://github.com/FlashVision/FlashInfer">FlashInfer</a>
+                    <a href="https://github.com/FlashVision/FlashDownUP">FlashDownUP</a>
+                    <a href="https://github.com/FlashVision/FlashFusion">FlashFusion</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Applied &amp; Tools</h4>
+                    <a href="https://github.com/FlashVision/FlashStudio">FlashStudio</a>
+                    <a href="https://github.com/FlashVision/FlashTrain">FlashTrain</a>
+                    <a href="https://github.com/FlashVision/FlashMed">FlashMed</a>
+                    <a href="https://github.com/FlashVision/FlashRAG">FlashRAG</a>
+                    <a href="https://github.com/FlashVision/FlashAgent">FlashAgent</a>
+                    <a href="https://github.com/FlashVision/VisionRL">VisionRL</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>MIT License &middot; Built by <a href="https://github.com/Gaurav14cs17">Gaurav14cs17</a></p>
+                <p>MIT License &middot; Built by <a href="https://github.com/Gaurav14cs17">Gaurav14cs17</a> &middot; <a href="https://github.com/FlashVision">FlashVision Organization</a></p>
             </div>
         </div>
     </footer>

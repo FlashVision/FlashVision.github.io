@@ -1,6 +1,7 @@
 /**
  * FlashVision Website — Main JavaScript
- * Handles: particles, scroll effects, tabs, copy, counter animation, mobile nav
+ * Handles: particles, scroll effects, tabs, copy, counter animation,
+ * mobile nav, project category filters, scroll reveal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCopyButton();
     initCounterAnimation();
     initScrollReveal();
+    initProjectFilters();
 });
 
 /* ===== Particle Background ===== */
@@ -28,15 +30,15 @@ function initParticles() {
 
     function createParticles() {
         particles = [];
-        const count = Math.floor((canvas.width * canvas.height) / 15000);
+        const count = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 120);
         for (let i = 0; i < count; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
+                vx: (Math.random() - 0.5) * 0.25,
+                vy: (Math.random() - 0.5) * 0.25,
                 radius: Math.random() * 1.5 + 0.5,
-                opacity: Math.random() * 0.5 + 0.1,
+                opacity: Math.random() * 0.4 + 0.1,
             });
         }
     }
@@ -58,17 +60,16 @@ function initParticles() {
             ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
             ctx.fill();
 
-            // Draw connections
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = p.x - particles[j].x;
                 const dy = p.y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
 
-                if (dist < 120) {
+                if (dist < 100) {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.08 * (1 - dist / 120)})`;
+                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.06 * (1 - dist / 100)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -82,25 +83,26 @@ function initParticles() {
     createParticles();
     drawParticles();
 
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        resize();
-        createParticles();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            resize();
+            createParticles();
+        }, 200);
     });
 }
 
 /* ===== Navbar Scroll Effect ===== */
 function initNavScroll() {
     const nav = document.getElementById('navbar');
+    if (!nav) return;
     let ticking = false;
 
     window.addEventListener('scroll', () => {
         if (!ticking) {
             requestAnimationFrame(() => {
-                if (window.scrollY > 20) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
+                nav.classList.toggle('scrolled', window.scrollY > 20);
                 ticking = false;
             });
             ticking = true;
@@ -141,7 +143,8 @@ function initTabs() {
             contents.forEach(c => c.classList.remove('active'));
 
             btn.classList.add('active');
-            document.getElementById(`tab-${target}`).classList.add('active');
+            const tabEl = document.getElementById(`tab-${target}`);
+            if (tabEl) tabEl.classList.add('active');
         });
     });
 }
@@ -170,6 +173,7 @@ function initCopyButton() {
 /* ===== Counter Animation ===== */
 function initCounterAnimation() {
     const stats = document.querySelectorAll('.stat');
+    if (!stats.length) return;
     let animated = false;
 
     const observer = new IntersectionObserver((entries) => {
@@ -189,6 +193,7 @@ function initCounterAnimation() {
             const target = parseFloat(stat.dataset.target);
             const suffix = stat.dataset.suffix || '';
             const valueEl = stat.querySelector('.stat-value');
+            if (!valueEl) return;
             const duration = 1500;
             const start = performance.now();
 
@@ -217,6 +222,7 @@ function initCounterAnimation() {
 /* ===== Scroll Reveal ===== */
 function initScrollReveal() {
     const elements = document.querySelectorAll('[data-aos]');
+    if (!elements.length) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -227,4 +233,49 @@ function initScrollReveal() {
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     elements.forEach(el => observer.observe(el));
+}
+
+/* ===== Project Category Filters ===== */
+function initProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const countEl = document.getElementById('visibleCount');
+
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const category = card.dataset.category;
+
+                if (filter === 'all' || category === filter) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+
+                    card.classList.remove('visible');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    });
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (countEl) {
+                countEl.textContent = visibleCount;
+            }
+        });
+    });
 }
