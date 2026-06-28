@@ -75,161 +75,167 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Our Projects</h2>
-            <p class="section-desc">Organized across 5 research areas — from lightweight edge models to large-scale generative AI.</p>
+            <p class="section-desc">24+ open-source projects across 5 research areas.</p>
 
-            <!-- Core Vision -->
-            <h3 class="category-title">Core Vision</h3>
-            <div class="projects-grid">
+            <!-- Featured Projects (3 cards) -->
+            <div class="featured-grid">
                 <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="card featured">
                     <div class="card-top">
                         <strong>FlashDet</strong>
                         <span class="badge badge-star">Flagship</span>
                     </div>
-                    <p>Real-time object detection. ShuffleNetV2 + GhostPAN. 0.3M–9M params, 100+ FPS on edge.</p>
+                    <p>Real-time object detection. ShuffleNetV2 + GhostPAN. 0.3M–9M params, 100+ FPS on edge devices.</p>
                     <div class="tags"><span>Detection</span><span>Edge AI</span><span>LoRA</span></div>
                 </a>
-                <a href="https://github.com/FlashVision/FlashSeg" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashSeg</strong></div>
-                    <p>Semantic &amp; instance segmentation with ultra-lightweight architectures for real-time use.</p>
-                    <div class="tags"><span>Segmentation</span><span>Real-time</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashCls" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashCls</strong></div>
-                    <p>Image classification models optimized for mobile and embedded deployment.</p>
-                    <div class="tags"><span>Classification</span><span>Mobile</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashOCR" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashOCR</strong></div>
-                    <p>Optical character recognition with scene text detection and recognition pipeline.</p>
-                    <div class="tags"><span>OCR</span><span>Text</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashPose" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashPose</strong></div>
-                    <p>Human pose estimation — real-time keypoint detection for fitness, AR, and action recognition.</p>
-                    <div class="tags"><span>Pose</span><span>Keypoints</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashTrack" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashTrack</strong></div>
-                    <p>Multi-object tracking with DeepSORT, ByteTrack, and BoT-SORT integration.</p>
-                    <div class="tags"><span>Tracking</span><span>MOT</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashDepth" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashDepth</strong></div>
-                    <p>Monocular depth estimation for robotics, AR, and autonomous driving applications.</p>
-                    <div class="tags"><span>Depth</span><span>3D</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashFace" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashFace</strong></div>
-                    <p>Face detection, recognition, and analysis — anti-spoofing, alignment, and embeddings.</p>
-                    <div class="tags"><span>Face</span><span>Recognition</span></div>
-                </a>
-            </div>
-
-            <!-- Generative & Foundation -->
-            <h3 class="category-title">Generative &amp; Foundation Models</h3>
-            <div class="projects-grid">
-                <a href="https://github.com/FlashVision/FlashLLM" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashLLM</strong></div>
-                    <p>Lightweight language models with efficient attention, quantization, and fast inference.</p>
-                    <div class="tags"><span>LLM</span><span>NLP</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashVLM" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashVLM</strong></div>
-                    <p>Vision-Language Models — multimodal understanding with efficient visual encoders.</p>
-                    <div class="tags"><span>VLM</span><span>Multimodal</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashDiffusion</strong></div>
-                    <p>Diffusion models for image generation — fast sampling, ControlNet, and LoRA support.</p>
-                    <div class="tags"><span>Diffusion</span><span>Generation</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashVideo" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashVideo</strong></div>
-                    <p>Video generation and understanding models with temporal consistency.</p>
-                    <div class="tags"><span>Video</span><span>Generation</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/Flash3D" target="_blank" class="card">
-                    <div class="card-top"><strong>Flash3D</strong></div>
-                    <p>3D generation and reconstruction — NeRF, Gaussian Splatting, and mesh generation.</p>
-                    <div class="tags"><span>3D</span><span>NeRF</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashAudio" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashAudio</strong></div>
-                    <p>Audio processing — speech recognition, TTS, music generation, and audio classification.</p>
-                    <div class="tags"><span>Audio</span><span>Speech</span></div>
-                </a>
-            </div>
-
-            <!-- Infrastructure -->
-            <h3 class="category-title">Infrastructure &amp; Optimization</h3>
-            <div class="projects-grid">
-                <a href="https://github.com/FlashVision/FlashOptim" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashOptim</strong></div>
-                    <p>Model compression — pruning, quantization (INT8/INT4), knowledge distillation, and NAS.</p>
-                    <div class="tags"><span>Quantization</span><span>Pruning</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashEdge" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashEdge</strong></div>
-                    <p>Edge deployment toolkit — Jetson, RPi, Android, iOS. ONNX/TensorRT/CoreML runtimes.</p>
-                    <div class="tags"><span>Edge</span><span>Deploy</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashInfer" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashInfer</strong></div>
-                    <p>High-performance inference engine with batching, caching, and multi-GPU serving.</p>
-                    <div class="tags"><span>Inference</span><span>Serving</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashDownUP" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashDownUP</strong></div>
-                    <p>Image super-resolution and upscaling — ESRGAN, Real-ESRGAN, and custom architectures.</p>
-                    <div class="tags"><span>Super-Res</span><span>Upscale</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashFusion" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashFusion</strong></div>
-                    <p>Multi-sensor fusion — LiDAR + Camera, radar + vision for autonomous systems.</p>
-                    <div class="tags"><span>Fusion</span><span>Autonomous</span></div>
-                </a>
-            </div>
-
-            <!-- Applied AI -->
-            <h3 class="category-title">Applied AI</h3>
-            <div class="projects-grid">
-                <a href="https://github.com/FlashVision/FlashMed" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashMed</strong></div>
-                    <p>Medical imaging — X-ray, CT, MRI analysis with specialized architectures and augmentations.</p>
-                    <div class="tags"><span>Medical</span><span>Healthcare</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashRAG" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashRAG</strong></div>
-                    <p>Retrieval-Augmented Generation — vector stores, embedding models, and RAG pipelines.</p>
-                    <div class="tags"><span>RAG</span><span>Retrieval</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/FlashAgent" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashAgent</strong></div>
-                    <p>AI agent framework — tool use, planning, memory, and multi-agent orchestration.</p>
-                    <div class="tags"><span>Agents</span><span>Tools</span></div>
-                </a>
-                <a href="https://github.com/FlashVision/VisionRL" target="_blank" class="card">
-                    <div class="card-top"><strong>VisionRL</strong></div>
-                    <p>Reinforcement learning for vision — RLHF, visual navigation, and game environments.</p>
-                    <div class="tags"><span>RL</span><span>RLHF</span></div>
-                </a>
-            </div>
-
-            <!-- Developer Tools -->
-            <h3 class="category-title">Developer Tools</h3>
-            <div class="projects-grid">
                 <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="card featured">
                     <div class="card-top">
                         <strong>FlashStudio</strong>
                         <span class="badge badge-new">New</span>
                     </div>
-                    <p>Interactive training &amp; inference UI. Streamlit dashboard for the entire FlashVision ecosystem. <code>pip install flashstudio</code></p>
+                    <p>Interactive training &amp; inference UI. Streamlit dashboard for the entire ecosystem. <code>pip install flashstudio</code></p>
                     <div class="tags"><span>UI</span><span>Streamlit</span><span>Training</span></div>
                 </a>
-                <a href="https://github.com/FlashVision/FlashTrain" target="_blank" class="card">
-                    <div class="card-top"><strong>FlashTrain</strong></div>
-                    <p>Training utilities — LoRA/QLoRA, mixed precision, distributed training, experiment tracking.</p>
-                    <div class="tags"><span>Training</span><span>LoRA</span></div>
+                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="card featured">
+                    <div class="card-top">
+                        <strong>FlashDiffusion</strong>
+                        <span class="badge badge-star">Popular</span>
+                    </div>
+                    <p>Diffusion models for image generation — fast sampling, ControlNet, LoRA, and SDXL support.</p>
+                    <div class="tags"><span>Diffusion</span><span>GenAI</span><span>ControlNet</span></div>
+                </a>
+            </div>
+
+            <!-- All Projects - Compact Table -->
+            <div class="projects-table">
+                <div class="pt-header">
+                    <span>Project</span>
+                    <span>Category</span>
+                    <span>Description</span>
+                </div>
+                <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashDet</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Real-time object detection for edge devices</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashSeg" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashSeg</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Semantic &amp; instance segmentation</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashCls" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashCls</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Image classification for mobile</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashOCR" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashOCR</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Scene text detection &amp; recognition</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashPose" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashPose</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Human pose estimation &amp; keypoints</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashTrack" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashTrack</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Multi-object tracking (DeepSORT, ByteTrack)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashDepth" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashDepth</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Monocular depth estimation</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashFace" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashFace</span>
+                    <span class="pt-cat">Vision</span>
+                    <span class="pt-desc">Face detection, recognition &amp; analysis</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashLLM" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashLLM</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">Lightweight language models</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashVLM" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashVLM</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">Vision-Language multimodal models</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashDiffusion</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">Image generation with diffusion models</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashVideo" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashVideo</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">Video generation &amp; understanding</span>
+                </a>
+                <a href="https://github.com/FlashVision/Flash3D" target="_blank" class="pt-row">
+                    <span class="pt-name">Flash3D</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">3D generation (NeRF, Gaussian Splatting)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashAudio" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashAudio</span>
+                    <span class="pt-cat">GenAI</span>
+                    <span class="pt-desc">Speech, TTS &amp; audio classification</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashOptim" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashOptim</span>
+                    <span class="pt-cat">Infra</span>
+                    <span class="pt-desc">Pruning, quantization &amp; distillation</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashEdge" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashEdge</span>
+                    <span class="pt-cat">Infra</span>
+                    <span class="pt-desc">Edge deployment (Jetson, RPi, mobile)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashInfer" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashInfer</span>
+                    <span class="pt-cat">Infra</span>
+                    <span class="pt-desc">High-performance inference engine</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashDownUP" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashDownUP</span>
+                    <span class="pt-cat">Infra</span>
+                    <span class="pt-desc">Image super-resolution &amp; upscaling</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashFusion" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashFusion</span>
+                    <span class="pt-cat">Infra</span>
+                    <span class="pt-desc">Multi-sensor fusion (LiDAR + Camera)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashMed" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashMed</span>
+                    <span class="pt-cat">Applied</span>
+                    <span class="pt-desc">Medical imaging (X-ray, CT, MRI)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashRAG" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashRAG</span>
+                    <span class="pt-cat">Applied</span>
+                    <span class="pt-desc">Retrieval-Augmented Generation pipelines</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashAgent" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashAgent</span>
+                    <span class="pt-cat">Applied</span>
+                    <span class="pt-desc">AI agent framework with tool use</span>
+                </a>
+                <a href="https://github.com/FlashVision/VisionRL" target="_blank" class="pt-row">
+                    <span class="pt-name">VisionRL</span>
+                    <span class="pt-cat">Applied</span>
+                    <span class="pt-desc">Reinforcement learning for vision</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashTrain" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashTrain</span>
+                    <span class="pt-cat">Tools</span>
+                    <span class="pt-desc">Training utilities (LoRA, AMP, distributed)</span>
+                </a>
+                <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="pt-row">
+                    <span class="pt-name">FlashStudio</span>
+                    <span class="pt-cat">Tools</span>
+                    <span class="pt-desc">Interactive training &amp; inference UI</span>
                 </a>
             </div>
         </div>
