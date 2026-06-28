@@ -1,108 +1,91 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
+    initGraphBackground();
     initNavScroll();
     initMobileMenu();
-    initScrollReveal();
-    initCounters();
-    initTypingEffect();
     initCategoryFilter();
-    initCopyButtons();
+    initBarChart();
+    initGraphTooltip();
+    initTypingEffect();
+    initClusterEdges();
 });
 
-/* ===== Particle Background ===== */
-function initParticles() {
-    const canvas = document.getElementById('bg-canvas');
+/* ===== Animated Node-Edge Background ===== */
+function initGraphBackground() {
+    const canvas = document.getElementById('graph-bg');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let particles = [];
+    let nodes = [];
+    let w, h;
 
     function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
     }
     resize();
     window.addEventListener('resize', resize);
 
-    class Particle {
-        constructor() {
-            this.reset();
-        }
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.3;
-            this.speedY = (Math.random() - 0.5) * 0.3;
-            this.opacity = Math.random() * 0.5 + 0.1;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
+    const colors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#ec4899'];
+    const count = Math.min(60, Math.floor(w / 25));
 
-    const count = Math.min(80, Math.floor(window.innerWidth / 20));
     for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+        nodes.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 2 + 1.5,
+            color: colors[Math.floor(Math.random() * colors.length)]
+        });
     }
 
-    function connectParticles() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
+    function draw() {
+        ctx.clearRect(0, 0, w, h);
+
+        // Draw edges
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 120) {
+                if (dist < 150) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.06 * (1 - dist / 120)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.08 * (1 - dist / 150)})`;
+                    ctx.lineWidth = 1;
                     ctx.stroke();
                 }
             }
         }
-    }
 
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
-        connectParticles();
-        requestAnimationFrame(animate);
+        // Draw nodes
+        for (const node of nodes) {
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+            ctx.fillStyle = node.color;
+            ctx.globalAlpha = 0.5;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+
+            // Move
+            node.x += node.vx;
+            node.y += node.vy;
+            if (node.x < 0 || node.x > w) node.vx *= -1;
+            if (node.y < 0 || node.y > h) node.vy *= -1;
+        }
+
+        requestAnimationFrame(draw);
     }
-    animate();
+    draw();
 }
 
 /* ===== Nav Scroll ===== */
 function initNavScroll() {
     const nav = document.getElementById('navbar');
     if (!nav) return;
-
-    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
 }
 
 /* ===== Mobile Menu ===== */
@@ -110,12 +93,10 @@ function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     if (!hamburger || !navLinks) return;
-
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
-
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -124,158 +105,232 @@ function initMobileMenu() {
     });
 }
 
-/* ===== Scroll Reveal ===== */
-function initScrollReveal() {
-    const elements = document.querySelectorAll('.fade-in');
+/* ===== Category Filter (removed - using clusters now) ===== */
+function initCategoryFilter() {}
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 80);
-                observer.unobserve(entry.target);
+/* ===== Cluster Edge Drawing (Canvas) ===== */
+function initClusterEdges() {
+    const clusters = document.querySelectorAll('.cluster');
+    clusters.forEach(cluster => {
+        const canvas = document.createElement('canvas');
+        canvas.className = 'cluster-canvas';
+        cluster.prepend(canvas);
+
+        const color = cluster.dataset.color;
+        const hub = cluster.querySelector('.cluster-hub');
+        const nodes = cluster.querySelectorAll('.gnode');
+
+        function drawEdges() {
+            const rect = cluster.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const hubRect = hub.getBoundingClientRect();
+            const hubX = hubRect.left - rect.left + hubRect.width / 2;
+            const hubY = hubRect.top - rect.top + hubRect.height;
+
+            const time = Date.now() * 0.002;
+
+            nodes.forEach((node, i) => {
+                const nodeRect = node.getBoundingClientRect();
+                const nodeX = nodeRect.left - rect.left + nodeRect.width / 2;
+                const nodeY = nodeRect.top - rect.top + 18;
+
+                // Draw curved edge
+                ctx.beginPath();
+                const cpY = hubY + (nodeY - hubY) * 0.4;
+                ctx.moveTo(hubX, hubY);
+                ctx.quadraticCurveTo(hubX + (nodeX - hubX) * 0.2, cpY, nodeX, nodeY);
+                ctx.strokeStyle = color;
+                ctx.globalAlpha = 0.25;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                // Animated data particle along the edge
+                ctx.globalAlpha = 0.8;
+                const t = ((time + i * 0.8) % 3) / 3;
+                const px = hubX + (nodeX - hubX) * t + Math.sin(t * Math.PI) * (nodeX - hubX) * 0.1 * (1 - t);
+                const py = hubY + (nodeY - hubY) * t;
+                ctx.beginPath();
+                ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+
+                // Glow on particle
+                ctx.beginPath();
+                ctx.arc(px, py, 5, 0, Math.PI * 2);
+                ctx.globalAlpha = 0.2;
+                ctx.fill();
+            });
+            ctx.globalAlpha = 1;
+        }
+
+        function animate() {
+            drawEdges();
+            requestAnimationFrame(animate);
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                animate();
+                observer.disconnect();
             }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+        }, { threshold: 0.1 });
+        observer.observe(cluster);
     });
-
-    elements.forEach(el => observer.observe(el));
 }
 
-/* ===== Animated Counters ===== */
-function initCounters() {
-    const counters = document.querySelectorAll('.stat-num[data-target]');
-
+/* ===== Bar Chart Animation ===== */
+function initBarChart() {
+    const bars = document.querySelectorAll('.bench-bar[data-width]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateCounter(entry.target);
+                entry.target.style.width = entry.target.dataset.width + '%';
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => observer.observe(counter));
+    }, { threshold: 0.1 });
+    bars.forEach(bar => observer.observe(bar));
 }
 
-function animateCounter(el) {
-    const target = parseFloat(el.dataset.target);
-    const duration = 2000;
-    const start = performance.now();
-    const isDecimal = target % 1 !== 0;
+/* ===== Graph Tooltip ===== */
+function initGraphTooltip() {
+    const svg = document.getElementById('ecosystem-graph');
+    const tooltip = document.getElementById('graph-tooltip');
+    if (!svg || !tooltip) return;
 
-    function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 4);
-        const current = target * eased;
+    const nodes = svg.querySelectorAll('.graph-node');
+    nodes.forEach(node => {
+        node.addEventListener('mouseenter', (e) => {
+            const name = node.dataset.name || node.dataset.label || '';
+            if (!name) return;
+            tooltip.textContent = name;
+            tooltip.style.opacity = '1';
+            const rect = svg.getBoundingClientRect();
+            const nodeRect = node.getBoundingClientRect();
+            tooltip.style.left = (nodeRect.left - rect.left + nodeRect.width / 2) + 'px';
+            tooltip.style.top = (nodeRect.top - rect.top - 36) + 'px';
+        });
+        node.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+        });
+    });
 
-        if (isDecimal) {
-            el.textContent = current.toFixed(1);
-        } else {
-            el.textContent = Math.floor(current);
-        }
+    // Animate particles along edges
+    initGraphParticles(svg);
+}
 
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        } else {
-            el.textContent = isDecimal ? target.toFixed(1) : target;
-        }
+/* ===== Animated Particles Flowing Along Edges ===== */
+function initGraphParticles(svg) {
+    const wrapper = svg.closest('.graph-wrapper');
+    if (!wrapper) return;
+
+    let particleCanvas = wrapper.querySelector('.graph-particles');
+    if (!particleCanvas) {
+        particleCanvas = document.createElement('canvas');
+        particleCanvas.className = 'graph-particles';
+        wrapper.appendChild(particleCanvas);
     }
-    requestAnimationFrame(update);
+
+    const edges = [
+        {x1:450,y1:260,x2:200,y2:120,color:'#6366f1'},
+        {x1:450,y1:260,x2:700,y2:120,color:'#06b6d4'},
+        {x1:450,y1:260,x2:150,y2:380,color:'#f59e0b'},
+        {x1:450,y1:260,x2:750,y2:380,color:'#10b981'},
+        {x1:450,y1:260,x2:450,y2:470,color:'#ec4899'},
+        {x1:200,y1:120,x2:80,y2:60,color:'#6366f1'},
+        {x1:200,y1:120,x2:120,y2:180,color:'#6366f1'},
+        {x1:200,y1:120,x2:280,y2:50,color:'#6366f1'},
+        {x1:200,y1:120,x2:310,y2:160,color:'#6366f1'},
+        {x1:700,y1:120,x2:620,y2:50,color:'#06b6d4'},
+        {x1:700,y1:120,x2:790,y2:55,color:'#06b6d4'},
+        {x1:700,y1:120,x2:820,y2:160,color:'#06b6d4'},
+        {x1:700,y1:120,x2:610,y2:175,color:'#06b6d4'},
+        {x1:150,y1:380,x2:60,y2:340,color:'#f59e0b'},
+        {x1:150,y1:380,x2:80,y2:440,color:'#f59e0b'},
+        {x1:150,y1:380,x2:250,y2:430,color:'#f59e0b'},
+        {x1:750,y1:380,x2:830,y2:330,color:'#10b981'},
+        {x1:750,y1:380,x2:850,y2:420,color:'#10b981'},
+        {x1:750,y1:380,x2:680,y2:440,color:'#10b981'},
+        {x1:450,y1:470,x2:370,y2:500,color:'#ec4899'},
+        {x1:450,y1:470,x2:530,y2:500,color:'#ec4899'},
+    ];
+
+    const particles = edges.map((e, i) => ({
+        edge: e,
+        t: (i * 0.15) % 1,
+        speed: 0.003 + Math.random() * 0.004,
+        size: 2 + Math.random() * 1.5
+    }));
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        particleCanvas.width = rect.width - 48;
+        particleCanvas.height = rect.height - 48;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const ctx = particleCanvas.getContext('2d');
+    const svgVB = {w: 900, h: 520};
+
+    function draw() {
+        ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+        const scaleX = particleCanvas.width / svgVB.w;
+        const scaleY = particleCanvas.height / svgVB.h;
+
+        particles.forEach(p => {
+            p.t += p.speed;
+            if (p.t > 1) p.t = 0;
+
+            const x = (p.edge.x1 + (p.edge.x2 - p.edge.x1) * p.t) * scaleX;
+            const y = (p.edge.y1 + (p.edge.y2 - p.edge.y1) * p.t) * scaleY;
+
+            // Particle glow
+            ctx.beginPath();
+            ctx.arc(x, y, p.size * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = p.edge.color;
+            ctx.globalAlpha = 0.15;
+            ctx.fill();
+
+            // Particle core
+            ctx.beginPath();
+            ctx.arc(x, y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = p.edge.color;
+            ctx.globalAlpha = 0.9;
+            ctx.fill();
+
+            // Trail
+            const trail = 0.05;
+            const tx = (p.edge.x1 + (p.edge.x2 - p.edge.x1) * Math.max(0, p.t - trail)) * scaleX;
+            const ty = (p.edge.y1 + (p.edge.y2 - p.edge.y1) * Math.max(0, p.t - trail)) * scaleY;
+            ctx.beginPath();
+            ctx.moveTo(tx, ty);
+            ctx.lineTo(x, y);
+            ctx.strokeStyle = p.edge.color;
+            ctx.globalAlpha = 0.4;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+        });
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(draw);
+    }
+
+    const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            draw();
+            obs.disconnect();
+        }
+    }, {threshold: 0.1});
+    obs.observe(wrapper);
 }
 
 /* ===== Typing Effect ===== */
 function initTypingEffect() {
-    const cmdEl = document.getElementById('typed-cmd');
-    if (!cmdEl) return;
-
-    const commands = [
-        'pip install flashdet flashstudio flashseg flashcls',
-        'flashdet train --pretrained-coco --lora --epochs 50',
-        'flashstudio',
-        'flashdet export --format onnx --half',
-        'flashdet benchmark --model m --input-size 320'
-    ];
-
-    let cmdIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-        const current = commands[cmdIndex];
-
-        if (!isDeleting) {
-            cmdEl.textContent = current.substring(0, charIndex + 1);
-            charIndex++;
-
-            if (charIndex === current.length) {
-                setTimeout(() => {
-                    isDeleting = true;
-                    type();
-                }, 2500);
-                return;
-            }
-            setTimeout(type, 40 + Math.random() * 30);
-        } else {
-            cmdEl.textContent = current.substring(0, charIndex - 1);
-            charIndex--;
-
-            if (charIndex === 0) {
-                isDeleting = false;
-                cmdIndex = (cmdIndex + 1) % commands.length;
-                setTimeout(type, 400);
-                return;
-            }
-            setTimeout(type, 20);
-        }
-    }
-
-    setTimeout(type, 1000);
-}
-
-/* ===== Category Filter ===== */
-function initCategoryFilter() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.mini-card');
-
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.dataset.filter;
-
-            cards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    });
-}
-
-/* ===== Copy Buttons ===== */
-function initCopyButtons() {
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const code = btn.dataset.code;
-            if (!code) return;
-
-            navigator.clipboard.writeText(code).then(() => {
-                btn.classList.add('copied');
-                btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>';
-
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
-                }, 2000);
-            });
-        });
-    });
+    const el = document.getElementById('typed-cmd');
+    if (!el) return;
+    // No typing effect in this version - keeping it clean
 }
