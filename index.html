@@ -8,456 +8,461 @@
     <link rel="icon" href="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Graph Background -->
     <canvas id="graph-bg"></canvas>
 
-    <!-- Nav -->
+    <!-- Floating Pill Nav -->
     <nav id="navbar">
-        <div class="container nav-inner">
-            <a href="#" class="logo">
-                <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="32" height="32">
-                <span>FlashVision</span>
-            </a>
-            <div class="nav-links" id="nav-links">
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-trigger">Vision <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-                    <div class="mega-menu">
-                        <a href="https://github.com/FlashVision/FlashDet" target="_blank"><strong>FlashDet</strong><span>Object Detection</span></a>
-                        <a href="https://github.com/FlashVision/FlashSeg" target="_blank"><strong>FlashSeg</strong><span>Segmentation</span></a>
-                        <a href="https://github.com/FlashVision/FlashCls" target="_blank"><strong>FlashCls</strong><span>Classification</span></a>
-                        <a href="https://github.com/FlashVision/FlashOCR" target="_blank"><strong>FlashOCR</strong><span>Text Recognition</span></a>
-                        <a href="https://github.com/FlashVision/FlashPose" target="_blank"><strong>FlashPose</strong><span>Pose Estimation</span></a>
-                        <a href="https://github.com/FlashVision/FlashTrack" target="_blank"><strong>FlashTrack</strong><span>Tracking</span></a>
-                        <a href="https://github.com/FlashVision/FlashDepth" target="_blank"><strong>FlashDepth</strong><span>Depth</span></a>
-                        <a href="https://github.com/FlashVision/FlashFace" target="_blank"><strong>FlashFace</strong><span>Face Analysis</span></a>
-                    </div>
-                </div>
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-trigger">GenAI <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-                    <div class="mega-menu">
-                        <a href="https://github.com/FlashVision/FlashLLM" target="_blank"><strong>FlashLLM</strong><span>Language Models</span></a>
-                        <a href="https://github.com/FlashVision/FlashVLM" target="_blank"><strong>FlashVLM</strong><span>Vision-Language</span></a>
-                        <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank"><strong>FlashDiffusion</strong><span>Image Gen</span></a>
-                        <a href="https://github.com/FlashVision/FlashVideo" target="_blank"><strong>FlashVideo</strong><span>Video Gen</span></a>
-                        <a href="https://github.com/FlashVision/Flash3D" target="_blank"><strong>Flash3D</strong><span>3D / NeRF</span></a>
-                        <a href="https://github.com/FlashVision/FlashAudio" target="_blank"><strong>FlashAudio</strong><span>Speech &amp; TTS</span></a>
-                    </div>
-                </div>
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-trigger">Infra <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-                    <div class="mega-menu">
-                        <a href="https://github.com/FlashVision/FlashOptim" target="_blank"><strong>FlashOptim</strong><span>Pruning &amp; Quant</span></a>
-                        <a href="https://github.com/FlashVision/FlashEdge" target="_blank"><strong>FlashEdge</strong><span>Edge Deploy</span></a>
-                        <a href="https://github.com/FlashVision/FlashInfer" target="_blank"><strong>FlashInfer</strong><span>Inference</span></a>
-                        <a href="https://github.com/FlashVision/FlashDownUP" target="_blank"><strong>FlashDownUP</strong><span>Super-Res</span></a>
-                        <a href="https://github.com/FlashVision/FlashFusion" target="_blank"><strong>FlashFusion</strong><span>Sensor Fusion</span></a>
-                        <a href="https://github.com/FlashVision/FlashTrain" target="_blank"><strong>FlashTrain</strong><span>Training Utils</span></a>
-                        <a href="https://github.com/FlashVision/FlashStudio" target="_blank"><strong>FlashStudio</strong><span>Dashboard UI</span></a>
-                    </div>
-                </div>
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-trigger">Applied <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-                    <div class="mega-menu">
-                        <a href="https://github.com/FlashVision/FlashMed" target="_blank"><strong>FlashMed</strong><span>Medical Imaging</span></a>
-                        <a href="https://github.com/FlashVision/FlashRAG" target="_blank"><strong>FlashRAG</strong><span>RAG Pipelines</span></a>
-                        <a href="https://github.com/FlashVision/FlashAgent" target="_blank"><strong>FlashAgent</strong><span>AI Agents</span></a>
-                        <a href="https://github.com/FlashVision/VisionRL" target="_blank"><strong>VisionRL</strong><span>Reinforcement Learning</span></a>
-                    </div>
-                </div>
-                <a href="#benchmarks">Benchmarks</a>
-                <a href="https://github.com/FlashVision" target="_blank" class="btn-nav-gh">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                    <span>GitHub</span>
-                </a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+        <a href="#" class="nav-logo">
+            <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="24" height="24">
+            <span>FlashVision</span>
+        </a>
+        <div class="nav-links">
+            <a href="#ecosystem">Graph</a>
+            <a href="#code">Code</a>
+            <a href="#benchmarks">Performance</a>
+            <a href="#pipeline">Pipeline</a>
         </div>
+        <a href="https://github.com/FlashVision" target="_blank" class="nav-github">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <span class="pulse-dot"></span>
-                Open Source &middot; Production Ready &middot; Edge Optimized
-            </div>
-            <h1>Building the Future of<br><span class="gradient-text">AI Research</span></h1>
-            <p class="hero-desc">We design, build, and maintain <strong>24+ open-source projects</strong> across computer vision, language models, generative AI, and edge deployment — all connected in one ecosystem.</p>
+    <!-- Hero: Full-screen Graph -->
+    <section id="hero" class="hero-graph">
+        <canvas id="hero-edges-canvas"></canvas>
+        <svg id="hero-svg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <filter id="glow-indigo"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="glow-cyan"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="glow-orange"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="glow-green"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="glow-pink"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="glow-hub"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <radialGradient id="hub-grad"><stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/><stop offset="100%" stop-color="#06070a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <!-- Hub glow background -->
+            <circle cx="600" cy="350" r="120" fill="url(#hub-grad)" class="hub-aura"/>
+            <!-- Main edges: Hub to categories -->
+            <g class="svg-edges">
+                <line x1="600" y1="350" x2="280" y2="180" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.6"/>
+                <line x1="600" y1="350" x2="920" y2="180" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.6"/>
+                <line x1="600" y1="350" x2="200" y2="520" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.6"/>
+                <line x1="600" y1="350" x2="1000" y2="520" stroke="#10b981" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.6"/>
+                <line x1="600" y1="350" x2="600" y2="620" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.6"/>
+            </g>
+            <!-- Vision leaf edges -->
+            <g class="svg-edges leaf-edges">
+                <line x1="280" y1="180" x2="130" y2="90" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="100" y2="180" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="140" y2="270" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="340" y2="70" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="420" y2="110" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="400" y2="240" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="220" y2="290" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="280" y1="180" x2="180" y2="310" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+            </g>
+            <!-- GenAI leaf edges -->
+            <g class="svg-edges leaf-edges">
+                <line x1="920" y1="180" x2="820" y2="80" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="920" y1="180" x2="1020" y2="80" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="920" y1="180" x2="1060" y2="180" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="920" y1="180" x2="1040" y2="270" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="920" y1="180" x2="820" y2="280" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="920" y1="180" x2="920" y2="290" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+            </g>
+            <!-- Infra leaf edges -->
+            <g class="svg-edges leaf-edges">
+                <line x1="200" y1="520" x2="80" y2="450" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="200" y1="520" x2="70" y2="560" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="200" y1="520" x2="150" y2="630" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="200" y1="520" x2="300" y2="620" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="200" y1="520" x2="330" y2="480" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+            </g>
+            <!-- Applied leaf edges -->
+            <g class="svg-edges leaf-edges">
+                <line x1="1000" y1="520" x2="1100" y2="440" stroke="#10b981" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="1000" y1="520" x2="1120" y2="560" stroke="#10b981" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="1000" y1="520" x2="1050" y2="630" stroke="#10b981" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="1000" y1="520" x2="910" y2="620" stroke="#10b981" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+            </g>
+            <!-- Tools leaf edges -->
+            <g class="svg-edges leaf-edges">
+                <line x1="600" y1="620" x2="510" y2="670" stroke="#ec4899" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+                <line x1="600" y1="620" x2="690" y2="670" stroke="#ec4899" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+            </g>
+
+            <!-- Center Hub Node -->
+            <g class="node hub-node" filter="url(#glow-hub)">
+                <circle cx="600" cy="350" r="44" fill="#0a0b10" stroke="#6366f1" stroke-width="3"/>
+                <text x="600" y="342" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="800" letter-spacing="2">FLASH</text>
+                <text x="600" y="362" text-anchor="middle" fill="#f0f0f5" font-size="10" font-weight="700">VISION</text>
+            </g>
+
+            <!-- Category Nodes -->
+            <g class="node cat-node" data-cat="vision" filter="url(#glow-indigo)">
+                <circle cx="280" cy="180" r="32" fill="#0a0b10" stroke="#6366f1" stroke-width="2.5"/>
+                <text x="280" y="175" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="700">VISION</text>
+                <text x="280" y="191" text-anchor="middle" fill="#6b7280" font-size="7">8 projects</text>
+            </g>
+            <g class="node cat-node" data-cat="genai" filter="url(#glow-cyan)">
+                <circle cx="920" cy="180" r="32" fill="#0a0b10" stroke="#06b6d4" stroke-width="2.5"/>
+                <text x="920" y="175" text-anchor="middle" fill="#67e8f9" font-size="9" font-weight="700">GENAI</text>
+                <text x="920" y="191" text-anchor="middle" fill="#6b7280" font-size="7">6 projects</text>
+            </g>
+            <g class="node cat-node" data-cat="infra" filter="url(#glow-orange)">
+                <circle cx="200" cy="520" r="32" fill="#0a0b10" stroke="#f59e0b" stroke-width="2.5"/>
+                <text x="200" y="515" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">INFRA</text>
+                <text x="200" y="531" text-anchor="middle" fill="#6b7280" font-size="7">5 projects</text>
+            </g>
+            <g class="node cat-node" data-cat="applied" filter="url(#glow-green)">
+                <circle cx="1000" cy="520" r="32" fill="#0a0b10" stroke="#10b981" stroke-width="2.5"/>
+                <text x="1000" y="515" text-anchor="middle" fill="#34d399" font-size="9" font-weight="700">APPLIED</text>
+                <text x="1000" y="531" text-anchor="middle" fill="#6b7280" font-size="7">4 projects</text>
+            </g>
+            <g class="node cat-node" data-cat="tools" filter="url(#glow-pink)">
+                <circle cx="600" cy="620" r="32" fill="#0a0b10" stroke="#ec4899" stroke-width="2.5"/>
+                <text x="600" y="615" text-anchor="middle" fill="#f472b6" font-size="9" font-weight="700">TOOLS</text>
+                <text x="600" y="631" text-anchor="middle" fill="#6b7280" font-size="7">2 projects</text>
+            </g>
+
+            <!-- Vision Leaf Nodes -->
+            <g class="node leaf-node"><circle cx="130" cy="90" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="130" y="94" text-anchor="middle" fill="#a5b4fc" font-size="7">Det</text></g>
+            <g class="node leaf-node"><circle cx="100" cy="180" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="100" y="184" text-anchor="middle" fill="#a5b4fc" font-size="7">Seg</text></g>
+            <g class="node leaf-node"><circle cx="140" cy="270" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="140" y="274" text-anchor="middle" fill="#a5b4fc" font-size="7">Cls</text></g>
+            <g class="node leaf-node"><circle cx="340" cy="70" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="340" y="74" text-anchor="middle" fill="#a5b4fc" font-size="7">OCR</text></g>
+            <g class="node leaf-node"><circle cx="420" cy="110" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="420" y="114" text-anchor="middle" fill="#a5b4fc" font-size="7">Pose</text></g>
+            <g class="node leaf-node"><circle cx="400" cy="240" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="400" y="244" text-anchor="middle" fill="#a5b4fc" font-size="7">Track</text></g>
+            <g class="node leaf-node"><circle cx="220" cy="290" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="220" y="294" text-anchor="middle" fill="#a5b4fc" font-size="7">Depth</text></g>
+            <g class="node leaf-node"><circle cx="180" cy="310" r="16" fill="#111218" stroke="#6366f1" stroke-width="1.2"/><text x="180" y="314" text-anchor="middle" fill="#a5b4fc" font-size="7">Face</text></g>
+
+            <!-- GenAI Leaf Nodes -->
+            <g class="node leaf-node"><circle cx="820" cy="80" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="820" y="84" text-anchor="middle" fill="#67e8f9" font-size="7">LLM</text></g>
+            <g class="node leaf-node"><circle cx="1020" cy="80" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="1020" y="84" text-anchor="middle" fill="#67e8f9" font-size="7">VLM</text></g>
+            <g class="node leaf-node"><circle cx="1060" cy="180" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="1060" y="184" text-anchor="middle" fill="#67e8f9" font-size="7">Diff</text></g>
+            <g class="node leaf-node"><circle cx="1040" cy="270" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="1040" y="274" text-anchor="middle" fill="#67e8f9" font-size="7">Video</text></g>
+            <g class="node leaf-node"><circle cx="820" cy="280" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="820" y="284" text-anchor="middle" fill="#67e8f9" font-size="7">3D</text></g>
+            <g class="node leaf-node"><circle cx="920" cy="290" r="16" fill="#111218" stroke="#06b6d4" stroke-width="1.2"/><text x="920" y="294" text-anchor="middle" fill="#67e8f9" font-size="7">Audio</text></g>
+
+            <!-- Infra Leaf Nodes -->
+            <g class="node leaf-node"><circle cx="80" cy="450" r="16" fill="#111218" stroke="#f59e0b" stroke-width="1.2"/><text x="80" y="454" text-anchor="middle" fill="#fbbf24" font-size="7">Optim</text></g>
+            <g class="node leaf-node"><circle cx="70" cy="560" r="16" fill="#111218" stroke="#f59e0b" stroke-width="1.2"/><text x="70" y="564" text-anchor="middle" fill="#fbbf24" font-size="7">Edge</text></g>
+            <g class="node leaf-node"><circle cx="150" cy="630" r="16" fill="#111218" stroke="#f59e0b" stroke-width="1.2"/><text x="150" y="634" text-anchor="middle" fill="#fbbf24" font-size="7">Infer</text></g>
+            <g class="node leaf-node"><circle cx="300" cy="620" r="16" fill="#111218" stroke="#f59e0b" stroke-width="1.2"/><text x="300" y="624" text-anchor="middle" fill="#fbbf24" font-size="6">DownUP</text></g>
+            <g class="node leaf-node"><circle cx="330" cy="480" r="16" fill="#111218" stroke="#f59e0b" stroke-width="1.2"/><text x="330" y="484" text-anchor="middle" fill="#fbbf24" font-size="6">Fusion</text></g>
+
+            <!-- Applied Leaf Nodes -->
+            <g class="node leaf-node"><circle cx="1100" cy="440" r="16" fill="#111218" stroke="#10b981" stroke-width="1.2"/><text x="1100" y="444" text-anchor="middle" fill="#34d399" font-size="7">Med</text></g>
+            <g class="node leaf-node"><circle cx="1120" cy="560" r="16" fill="#111218" stroke="#10b981" stroke-width="1.2"/><text x="1120" y="564" text-anchor="middle" fill="#34d399" font-size="7">RAG</text></g>
+            <g class="node leaf-node"><circle cx="1050" cy="630" r="16" fill="#111218" stroke="#10b981" stroke-width="1.2"/><text x="1050" y="634" text-anchor="middle" fill="#34d399" font-size="7">Agent</text></g>
+            <g class="node leaf-node"><circle cx="910" cy="620" r="16" fill="#111218" stroke="#10b981" stroke-width="1.2"/><text x="910" y="624" text-anchor="middle" fill="#34d399" font-size="7">RL</text></g>
+
+            <!-- Tools Leaf Nodes -->
+            <g class="node leaf-node"><circle cx="510" cy="670" r="16" fill="#111218" stroke="#ec4899" stroke-width="1.2"/><text x="510" y="674" text-anchor="middle" fill="#f472b6" font-size="7">Train</text></g>
+            <g class="node leaf-node"><circle cx="690" cy="670" r="16" fill="#111218" stroke="#ec4899" stroke-width="1.2"/><text x="690" y="674" text-anchor="middle" fill="#f472b6" font-size="6">Studio</text></g>
+
+            <!-- Stat badge nodes -->
+            <g class="node stat-badge">
+                <circle cx="500" cy="280" r="18" fill="#111218" stroke="#6366f1" stroke-width="1" opacity="0.8"/>
+                <text x="500" y="277" text-anchor="middle" fill="#f0f0f5" font-size="8" font-weight="700">24+</text>
+                <text x="500" y="289" text-anchor="middle" fill="#6b7280" font-size="5">repos</text>
+            </g>
+            <g class="node stat-badge">
+                <circle cx="700" cy="280" r="18" fill="#111218" stroke="#06b6d4" stroke-width="1" opacity="0.8"/>
+                <text x="700" y="277" text-anchor="middle" fill="#f0f0f5" font-size="8" font-weight="700">142+</text>
+                <text x="700" y="289" text-anchor="middle" fill="#6b7280" font-size="5">FPS</text>
+            </g>
+            <g class="node stat-badge">
+                <circle cx="550" cy="420" r="18" fill="#111218" stroke="#10b981" stroke-width="1" opacity="0.8"/>
+                <text x="550" y="417" text-anchor="middle" fill="#f0f0f5" font-size="8" font-weight="700">0.3M</text>
+                <text x="550" y="429" text-anchor="middle" fill="#6b7280" font-size="5">params</text>
+            </g>
+            <g class="node stat-badge">
+                <circle cx="650" cy="420" r="18" fill="#111218" stroke="#f59e0b" stroke-width="1" opacity="0.8"/>
+                <text x="650" y="417" text-anchor="middle" fill="#f0f0f5" font-size="8" font-weight="700">5</text>
+                <text x="650" y="429" text-anchor="middle" fill="#6b7280" font-size="5">domains</text>
+            </g>
+        </svg>
+
+        <!-- Glass Panel Overlay -->
+        <div class="hero-panel">
+            <h1>Build AI at the<br><span class="gradient-text">Speed of Light</span></h1>
+            <p>24+ open-source projects across computer vision, language models, generative AI, and edge deployment — all connected in one ecosystem graph.</p>
             <div class="hero-btns">
                 <a href="#ecosystem" class="btn-primary">
-                    <span>Explore Ecosystem</span>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span>Explore Graph</span>
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="https://github.com/FlashVision" target="_blank" class="btn-glass">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
                     <span>Star on GitHub</span>
                 </a>
             </div>
-            <!-- Stats Row -->
-            <div class="hero-stats">
-                <div class="hero-stat"><span class="hs-num">24+</span><span class="hs-label">Projects</span></div>
-                <div class="hero-stat-sep"></div>
-                <div class="hero-stat"><span class="hs-num">5</span><span class="hs-label">Categories</span></div>
-                <div class="hero-stat-sep"></div>
-                <div class="hero-stat"><span class="hs-num">142+</span><span class="hs-label">FPS Edge</span></div>
-                <div class="hero-stat-sep"></div>
-                <div class="hero-stat"><span class="hs-num">0.3M</span><span class="hs-label">Min Params</span></div>
-            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Ecosystem Graph -->
-    <section id="ecosystem" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Ecosystem Graph</span>
-                <h2 class="section-title">Project Network</h2>
-                <p class="section-desc">Our projects form an interconnected graph — each node is a library, edges represent dependencies and data flow.</p>
+    <!-- Ecosystem: Cluster Detail Panels -->
+    <section id="ecosystem">
+        <div class="section-label">
+            <span class="label-dot"></span>
+            <span>Ecosystem Clusters</span>
+        </div>
+        <div class="clusters-grid">
+            <!-- Vision Cluster -->
+            <div class="cluster-card" data-color="#6366f1">
+                <div class="cluster-header">
+                    <div class="cluster-dot" style="background:#6366f1;box-shadow:0 0 12px #6366f1"></div>
+                    <h3>Vision</h3>
+                    <span class="cluster-count">8 nodes</span>
+                </div>
+                <canvas class="cluster-canvas" data-category="vision"></canvas>
+                <div class="cluster-links">
+                    <a href="https://github.com/FlashVision/FlashDet" target="_blank">FlashDet</a>
+                    <a href="https://github.com/FlashVision/FlashSeg" target="_blank">FlashSeg</a>
+                    <a href="https://github.com/FlashVision/FlashCls" target="_blank">FlashCls</a>
+                    <a href="https://github.com/FlashVision/FlashOCR" target="_blank">FlashOCR</a>
+                    <a href="https://github.com/FlashVision/FlashPose" target="_blank">FlashPose</a>
+                    <a href="https://github.com/FlashVision/FlashTrack" target="_blank">FlashTrack</a>
+                    <a href="https://github.com/FlashVision/FlashDepth" target="_blank">FlashDepth</a>
+                    <a href="https://github.com/FlashVision/FlashFace" target="_blank">FlashFace</a>
+                </div>
             </div>
-
-            <!-- Interactive SVG Graph -->
-            <div class="graph-wrapper">
-                <svg id="ecosystem-graph" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet">
-                    <!-- Edges (drawn first, behind nodes) -->
-                    <g class="graph-edges" stroke-width="1.5" fill="none" opacity="0.5">
-                        <!-- Core hub to categories -->
-                        <line x1="450" y1="260" x2="200" y2="120" stroke="url(#eg1)"/>
-                        <line x1="450" y1="260" x2="700" y2="120" stroke="url(#eg2)"/>
-                        <line x1="450" y1="260" x2="150" y2="380" stroke="url(#eg3)"/>
-                        <line x1="450" y1="260" x2="750" y2="380" stroke="url(#eg4)"/>
-                        <line x1="450" y1="260" x2="450" y2="470" stroke="url(#eg5)"/>
-                        <!-- Vision sub-edges -->
-                        <line x1="200" y1="120" x2="80" y2="60" stroke="#6366f1" opacity="0.3"/>
-                        <line x1="200" y1="120" x2="120" y2="180" stroke="#6366f1" opacity="0.3"/>
-                        <line x1="200" y1="120" x2="280" y2="50" stroke="#6366f1" opacity="0.3"/>
-                        <line x1="200" y1="120" x2="310" y2="160" stroke="#6366f1" opacity="0.3"/>
-                        <!-- GenAI sub-edges -->
-                        <line x1="700" y1="120" x2="620" y2="50" stroke="#06b6d4" opacity="0.3"/>
-                        <line x1="700" y1="120" x2="790" y2="55" stroke="#06b6d4" opacity="0.3"/>
-                        <line x1="700" y1="120" x2="820" y2="160" stroke="#06b6d4" opacity="0.3"/>
-                        <line x1="700" y1="120" x2="610" y2="175" stroke="#06b6d4" opacity="0.3"/>
-                        <!-- Infra sub-edges -->
-                        <line x1="150" y1="380" x2="60" y2="340" stroke="#f59e0b" opacity="0.3"/>
-                        <line x1="150" y1="380" x2="80" y2="440" stroke="#f59e0b" opacity="0.3"/>
-                        <line x1="150" y1="380" x2="250" y2="430" stroke="#f59e0b" opacity="0.3"/>
-                        <!-- Applied sub-edges -->
-                        <line x1="750" y1="380" x2="830" y2="330" stroke="#10b981" opacity="0.3"/>
-                        <line x1="750" y1="380" x2="850" y2="420" stroke="#10b981" opacity="0.3"/>
-                        <line x1="750" y1="380" x2="680" y2="440" stroke="#10b981" opacity="0.3"/>
-                        <!-- Tools sub-edges -->
-                        <line x1="450" y1="470" x2="370" y2="500" stroke="#ec4899" opacity="0.3"/>
-                        <line x1="450" y1="470" x2="530" y2="500" stroke="#ec4899" opacity="0.3"/>
-                        <!-- Cross-connections -->
-                        <path d="M200,120 Q450,50 700,120" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4,4"/>
-                        <path d="M150,380 Q450,450 750,380" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4,4"/>
-                    </g>
-                    <!-- Gradients -->
-                    <defs>
-                        <linearGradient id="eg1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
-                        <linearGradient id="eg2"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
-                        <linearGradient id="eg3"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
-                        <linearGradient id="eg4"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
-                        <linearGradient id="eg5"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
-                        <radialGradient id="node-glow"><stop offset="0%" stop-color="rgba(99,102,241,0.3)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                    </defs>
-                    <!-- Center Hub -->
-                    <circle cx="450" cy="260" r="20" fill="url(#node-glow)"/>
-                    <g class="graph-node hub-node" data-label="FlashVision">
-                        <circle cx="450" cy="260" r="32" fill="#12131a" stroke="#6366f1" stroke-width="2.5"/>
-                        <text x="450" y="265" text-anchor="middle" fill="#f0f0f5" font-size="9" font-weight="700">FLASH</text>
-                    </g>
-                    <!-- Vision Category Node -->
-                    <g class="graph-node cat-node" data-link="#" data-category="vision">
-                        <circle cx="200" cy="120" r="24" fill="#12131a" stroke="#6366f1" stroke-width="2"/>
-                        <text x="200" y="116" text-anchor="middle" fill="#818cf8" font-size="8" font-weight="700">VISION</text>
-                        <text x="200" y="130" text-anchor="middle" fill="#6b7280" font-size="7">8 projects</text>
-                    </g>
-                    <!-- GenAI Category Node -->
-                    <g class="graph-node cat-node" data-category="genai">
-                        <circle cx="700" cy="120" r="24" fill="#12131a" stroke="#06b6d4" stroke-width="2"/>
-                        <text x="700" y="116" text-anchor="middle" fill="#67e8f9" font-size="8" font-weight="700">GENAI</text>
-                        <text x="700" y="130" text-anchor="middle" fill="#6b7280" font-size="7">6 projects</text>
-                    </g>
-                    <!-- Infra Category Node -->
-                    <g class="graph-node cat-node" data-category="infra">
-                        <circle cx="150" cy="380" r="24" fill="#12131a" stroke="#f59e0b" stroke-width="2"/>
-                        <text x="150" y="376" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="700">INFRA</text>
-                        <text x="150" y="390" text-anchor="middle" fill="#6b7280" font-size="7">5 projects</text>
-                    </g>
-                    <!-- Applied Category Node -->
-                    <g class="graph-node cat-node" data-category="applied">
-                        <circle cx="750" cy="380" r="24" fill="#12131a" stroke="#10b981" stroke-width="2"/>
-                        <text x="750" y="376" text-anchor="middle" fill="#34d399" font-size="8" font-weight="700">APPLIED</text>
-                        <text x="750" y="390" text-anchor="middle" fill="#6b7280" font-size="7">4 projects</text>
-                    </g>
-                    <!-- Tools Category Node -->
-                    <g class="graph-node cat-node" data-category="tools">
-                        <circle cx="450" cy="470" r="24" fill="#12131a" stroke="#ec4899" stroke-width="2"/>
-                        <text x="450" y="466" text-anchor="middle" fill="#f472b6" font-size="8" font-weight="700">TOOLS</text>
-                        <text x="450" y="480" text-anchor="middle" fill="#6b7280" font-size="7">2 projects</text>
-                    </g>
-                    <!-- Leaf Nodes - Vision -->
-                    <g class="graph-node leaf" data-name="FlashDet" style="--d:0s"><circle cx="80" cy="60" r="14" fill="#1a1b24" stroke="#6366f1" stroke-width="1.2"/><text x="80" y="64" text-anchor="middle" fill="#9ca3af" font-size="6">Det</text></g>
-                    <g class="graph-node leaf" data-name="FlashSeg" style="--d:0.4s"><circle cx="120" cy="180" r="14" fill="#1a1b24" stroke="#6366f1" stroke-width="1.2"/><text x="120" y="184" text-anchor="middle" fill="#9ca3af" font-size="6">Seg</text></g>
-                    <g class="graph-node leaf" data-name="FlashCls" style="--d:0.8s"><circle cx="280" cy="50" r="14" fill="#1a1b24" stroke="#6366f1" stroke-width="1.2"/><text x="280" y="54" text-anchor="middle" fill="#9ca3af" font-size="6">Cls</text></g>
-                    <g class="graph-node leaf" data-name="FlashOCR" style="--d:1.2s"><circle cx="310" cy="160" r="14" fill="#1a1b24" stroke="#6366f1" stroke-width="1.2"/><text x="310" y="164" text-anchor="middle" fill="#9ca3af" font-size="6">OCR</text></g>
-                    <!-- Leaf Nodes - GenAI -->
-                    <g class="graph-node leaf" data-name="FlashLLM" style="--d:0.2s"><circle cx="620" cy="50" r="14" fill="#1a1b24" stroke="#06b6d4" stroke-width="1.2"/><text x="620" y="54" text-anchor="middle" fill="#9ca3af" font-size="6">LLM</text></g>
-                    <g class="graph-node leaf" data-name="FlashDiffusion" style="--d:0.6s"><circle cx="790" cy="55" r="14" fill="#1a1b24" stroke="#06b6d4" stroke-width="1.2"/><text x="790" y="59" text-anchor="middle" fill="#9ca3af" font-size="6">Diff</text></g>
-                    <g class="graph-node leaf" data-name="FlashVLM" style="--d:1s"><circle cx="820" cy="160" r="14" fill="#1a1b24" stroke="#06b6d4" stroke-width="1.2"/><text x="820" y="164" text-anchor="middle" fill="#9ca3af" font-size="6">VLM</text></g>
-                    <g class="graph-node leaf" data-name="FlashVideo" style="--d:1.4s"><circle cx="610" cy="175" r="14" fill="#1a1b24" stroke="#06b6d4" stroke-width="1.2"/><text x="610" y="179" text-anchor="middle" fill="#9ca3af" font-size="6">Vid</text></g>
-                    <!-- Leaf Nodes - Infra -->
-                    <g class="graph-node leaf" data-name="FlashOptim" style="--d:0.3s"><circle cx="60" cy="340" r="14" fill="#1a1b24" stroke="#f59e0b" stroke-width="1.2"/><text x="60" y="344" text-anchor="middle" fill="#9ca3af" font-size="6">Opt</text></g>
-                    <g class="graph-node leaf" data-name="FlashEdge" style="--d:0.7s"><circle cx="80" cy="440" r="14" fill="#1a1b24" stroke="#f59e0b" stroke-width="1.2"/><text x="80" y="444" text-anchor="middle" fill="#9ca3af" font-size="6">Edge</text></g>
-                    <g class="graph-node leaf" data-name="FlashInfer" style="--d:1.1s"><circle cx="250" cy="430" r="14" fill="#1a1b24" stroke="#f59e0b" stroke-width="1.2"/><text x="250" y="434" text-anchor="middle" fill="#9ca3af" font-size="6">Infer</text></g>
-                    <!-- Leaf Nodes - Applied -->
-                    <g class="graph-node leaf" data-name="FlashMed" style="--d:0.5s"><circle cx="830" cy="330" r="14" fill="#1a1b24" stroke="#10b981" stroke-width="1.2"/><text x="830" y="334" text-anchor="middle" fill="#9ca3af" font-size="6">Med</text></g>
-                    <g class="graph-node leaf" data-name="FlashRAG" style="--d:0.9s"><circle cx="850" cy="420" r="14" fill="#1a1b24" stroke="#10b981" stroke-width="1.2"/><text x="850" y="424" text-anchor="middle" fill="#9ca3af" font-size="6">RAG</text></g>
-                    <g class="graph-node leaf" data-name="FlashAgent" style="--d:1.3s"><circle cx="680" cy="440" r="14" fill="#1a1b24" stroke="#10b981" stroke-width="1.2"/><text x="680" y="444" text-anchor="middle" fill="#9ca3af" font-size="6">Agent</text></g>
-                    <!-- Leaf Nodes - Tools -->
-                    <g class="graph-node leaf" data-name="FlashTrain" style="--d:0.6s"><circle cx="370" cy="500" r="14" fill="#1a1b24" stroke="#ec4899" stroke-width="1.2"/><text x="370" y="504" text-anchor="middle" fill="#9ca3af" font-size="6">Train</text></g>
-                    <g class="graph-node leaf" data-name="FlashStudio" style="--d:1.2s"><circle cx="530" cy="500" r="14" fill="#1a1b24" stroke="#ec4899" stroke-width="1.2"/><text x="530" y="504" text-anchor="middle" fill="#9ca3af" font-size="6">Studio</text></g>
-                </svg>
-                <div class="graph-tooltip" id="graph-tooltip"></div>
+            <!-- GenAI Cluster -->
+            <div class="cluster-card" data-color="#06b6d4">
+                <div class="cluster-header">
+                    <div class="cluster-dot" style="background:#06b6d4;box-shadow:0 0 12px #06b6d4"></div>
+                    <h3>GenAI</h3>
+                    <span class="cluster-count">6 nodes</span>
+                </div>
+                <canvas class="cluster-canvas" data-category="genai"></canvas>
+                <div class="cluster-links">
+                    <a href="https://github.com/FlashVision/FlashLLM" target="_blank">FlashLLM</a>
+                    <a href="https://github.com/FlashVision/FlashVLM" target="_blank">FlashVLM</a>
+                    <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank">FlashDiffusion</a>
+                    <a href="https://github.com/FlashVision/FlashVideo" target="_blank">FlashVideo</a>
+                    <a href="https://github.com/FlashVision/Flash3D" target="_blank">Flash3D</a>
+                    <a href="https://github.com/FlashVision/FlashAudio" target="_blank">FlashAudio</a>
+                </div>
             </div>
-
-            <!-- Graph Clusters - Each category as a visual cluster with edges -->
-            <div class="graph-clusters">
-                <!-- Vision Cluster -->
-                <div class="cluster" data-color="#6366f1">
-                    <div class="cluster-hub">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        <span>Vision</span>
-                    </div>
-                    <svg class="cluster-edges" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="50" y1="0" x2="12" y2="30" stroke="#6366f1" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="37" y2="30" stroke="#6366f1" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="62" y2="30" stroke="#6366f1" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="87" y2="30" stroke="#6366f1" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="12" y2="65" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
-                        <line x1="50" y1="0" x2="37" y2="65" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
-                        <line x1="50" y1="0" x2="62" y2="65" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
-                        <line x1="50" y1="0" x2="87" y2="65" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
-                    </svg>
-                    <div class="cluster-nodes">
-                        <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashDet</span><span class="gnode-sub">Detection</span></a>
-                        <a href="https://github.com/FlashVision/FlashSeg" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashSeg</span><span class="gnode-sub">Segmentation</span></a>
-                        <a href="https://github.com/FlashVision/FlashCls" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashCls</span><span class="gnode-sub">Classification</span></a>
-                        <a href="https://github.com/FlashVision/FlashOCR" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashOCR</span><span class="gnode-sub">OCR</span></a>
-                        <a href="https://github.com/FlashVision/FlashPose" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashPose</span><span class="gnode-sub">Pose</span></a>
-                        <a href="https://github.com/FlashVision/FlashTrack" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashTrack</span><span class="gnode-sub">Tracking</span></a>
-                        <a href="https://github.com/FlashVision/FlashDepth" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashDepth</span><span class="gnode-sub">Depth</span></a>
-                        <a href="https://github.com/FlashVision/FlashFace" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashFace</span><span class="gnode-sub">Face</span></a>
-                    </div>
+            <!-- Infra Cluster -->
+            <div class="cluster-card" data-color="#f59e0b">
+                <div class="cluster-header">
+                    <div class="cluster-dot" style="background:#f59e0b;box-shadow:0 0 12px #f59e0b"></div>
+                    <h3>Infra</h3>
+                    <span class="cluster-count">5 nodes</span>
                 </div>
-
-                <!-- GenAI Cluster -->
-                <div class="cluster" data-color="#06b6d4">
-                    <div class="cluster-hub">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        <span>GenAI</span>
-                    </div>
-                    <svg class="cluster-edges" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="50" y1="0" x2="8" y2="30" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="30" y2="30" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="52" y2="30" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="75" y2="30" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="97" y2="30" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="25" y2="65" stroke="#06b6d4" stroke-width="0.5" opacity="0.3"/>
-                    </svg>
-                    <div class="cluster-nodes">
-                        <a href="https://github.com/FlashVision/FlashLLM" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashLLM</span><span class="gnode-sub">LLM</span></a>
-                        <a href="https://github.com/FlashVision/FlashVLM" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashVLM</span><span class="gnode-sub">VLM</span></a>
-                        <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashDiffusion</span><span class="gnode-sub">Diffusion</span></a>
-                        <a href="https://github.com/FlashVision/FlashVideo" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashVideo</span><span class="gnode-sub">Video</span></a>
-                        <a href="https://github.com/FlashVision/Flash3D" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">Flash3D</span><span class="gnode-sub">3D/NeRF</span></a>
-                        <a href="https://github.com/FlashVision/FlashAudio" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashAudio</span><span class="gnode-sub">Audio</span></a>
-                    </div>
+                <canvas class="cluster-canvas" data-category="infra"></canvas>
+                <div class="cluster-links">
+                    <a href="https://github.com/FlashVision/FlashOptim" target="_blank">FlashOptim</a>
+                    <a href="https://github.com/FlashVision/FlashEdge" target="_blank">FlashEdge</a>
+                    <a href="https://github.com/FlashVision/FlashInfer" target="_blank">FlashInfer</a>
+                    <a href="https://github.com/FlashVision/FlashDownUP" target="_blank">FlashDownUP</a>
+                    <a href="https://github.com/FlashVision/FlashFusion" target="_blank">FlashFusion</a>
                 </div>
-
-                <!-- Infra Cluster -->
-                <div class="cluster" data-color="#f59e0b">
-                    <div class="cluster-hub">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
-                        <span>Infra</span>
-                    </div>
-                    <svg class="cluster-edges" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="50" y1="0" x2="10" y2="35" stroke="#f59e0b" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="30" y2="35" stroke="#f59e0b" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="50" y2="35" stroke="#f59e0b" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="70" y2="35" stroke="#f59e0b" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="90" y2="35" stroke="#f59e0b" stroke-width="0.5" opacity="0.5"/>
-                    </svg>
-                    <div class="cluster-nodes">
-                        <a href="https://github.com/FlashVision/FlashOptim" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashOptim</span><span class="gnode-sub">Optimize</span></a>
-                        <a href="https://github.com/FlashVision/FlashEdge" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashEdge</span><span class="gnode-sub">Edge</span></a>
-                        <a href="https://github.com/FlashVision/FlashInfer" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashInfer</span><span class="gnode-sub">Inference</span></a>
-                        <a href="https://github.com/FlashVision/FlashDownUP" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashDownUP</span><span class="gnode-sub">Upscale</span></a>
-                        <a href="https://github.com/FlashVision/FlashFusion" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashFusion</span><span class="gnode-sub">Fusion</span></a>
-                    </div>
+            </div>
+            <!-- Applied Cluster -->
+            <div class="cluster-card" data-color="#10b981">
+                <div class="cluster-header">
+                    <div class="cluster-dot" style="background:#10b981;box-shadow:0 0 12px #10b981"></div>
+                    <h3>Applied</h3>
+                    <span class="cluster-count">4 nodes</span>
                 </div>
-
-                <!-- Applied Cluster -->
-                <div class="cluster" data-color="#10b981">
-                    <div class="cluster-hub">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        <span>Applied</span>
-                    </div>
-                    <svg class="cluster-edges" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="50" y1="0" x2="12" y2="40" stroke="#10b981" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="37" y2="40" stroke="#10b981" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="62" y2="40" stroke="#10b981" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="87" y2="40" stroke="#10b981" stroke-width="0.5" opacity="0.5"/>
-                    </svg>
-                    <div class="cluster-nodes">
-                        <a href="https://github.com/FlashVision/FlashMed" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashMed</span><span class="gnode-sub">Medical</span></a>
-                        <a href="https://github.com/FlashVision/FlashRAG" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashRAG</span><span class="gnode-sub">RAG</span></a>
-                        <a href="https://github.com/FlashVision/FlashAgent" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashAgent</span><span class="gnode-sub">Agents</span></a>
-                        <a href="https://github.com/FlashVision/VisionRL" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">VisionRL</span><span class="gnode-sub">RL</span></a>
-                    </div>
+                <canvas class="cluster-canvas" data-category="applied"></canvas>
+                <div class="cluster-links">
+                    <a href="https://github.com/FlashVision/FlashMed" target="_blank">FlashMed</a>
+                    <a href="https://github.com/FlashVision/FlashRAG" target="_blank">FlashRAG</a>
+                    <a href="https://github.com/FlashVision/FlashAgent" target="_blank">FlashAgent</a>
+                    <a href="https://github.com/FlashVision/VisionRL" target="_blank">VisionRL</a>
                 </div>
-
-                <!-- Tools Cluster -->
-                <div class="cluster" data-color="#ec4899">
-                    <div class="cluster-hub">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-                        <span>Tools</span>
-                    </div>
-                    <svg class="cluster-edges" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="50" y1="0" x2="25" y2="45" stroke="#ec4899" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="50" y1="0" x2="75" y2="45" stroke="#ec4899" stroke-width="0.5" opacity="0.5"/>
-                    </svg>
-                    <div class="cluster-nodes">
-                        <a href="https://github.com/FlashVision/FlashTrain" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashTrain</span><span class="gnode-sub">Training</span></a>
-                        <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="gnode"><span class="gnode-ring"></span><span class="gnode-label">FlashStudio</span><span class="gnode-sub">UI</span></a>
-                    </div>
+            </div>
+            <!-- Tools Cluster -->
+            <div class="cluster-card" data-color="#ec4899">
+                <div class="cluster-header">
+                    <div class="cluster-dot" style="background:#ec4899;box-shadow:0 0 12px #ec4899"></div>
+                    <h3>Tools</h3>
+                    <span class="cluster-count">2 nodes</span>
+                </div>
+                <canvas class="cluster-canvas" data-category="tools"></canvas>
+                <div class="cluster-links">
+                    <a href="https://github.com/FlashVision/FlashTrain" target="_blank">FlashTrain</a>
+                    <a href="https://github.com/FlashVision/FlashStudio" target="_blank">FlashStudio</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Start -->
-    <section id="quickstart" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get Started</span>
-                <h2 class="section-title">Quick Start</h2>
-                <p class="section-desc">From install to inference in under 60 seconds.</p>
-            </div>
-            <div class="code-grid">
-                <div class="code-block">
-                    <div class="code-header"><div class="code-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><span class="code-title">detection.py</span></div>
-                    <pre><code><span class="c"># Install</span>
-pip install flashdet
-
-<span class="c"># Inference</span>
-<span class="k">from</span> flashdet <span class="k">import</span> Predictor
-detector = Predictor(pretrained_coco=<span class="v">True</span>)
-results = detector.predict(<span class="s">"image.jpg"</span>)
-
-<span class="k">for</span> cls, score, x1, y1, x2, y2 <span class="k">in</span> results:
-    print(f<span class="s">"{cls}: {score:.2f}"</span>)</code></pre>
+    <!-- Code Panel: Terminal Nodes -->
+    <section id="code">
+        <div class="section-label">
+            <span class="label-dot"></span>
+            <span>Code Flow</span>
+        </div>
+        <div class="code-flow">
+            <div class="code-node">
+                <div class="code-node-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span>install</span>
                 </div>
-                <div class="code-block">
-                    <div class="code-header"><div class="code-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><span class="code-title">train.py</span></div>
-                    <pre><code><span class="c"># Fine-tune with LoRA</span>
-<span class="k">from</span> flashdet <span class="k">import</span> Trainer
+                <pre><code>pip install flashdet</code></pre>
+            </div>
+            <div class="code-edge">
+                <svg viewBox="0 0 60 24"><line x1="0" y1="12" x2="48" y2="12" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 3"/><polygon points="46,7 56,12 46,17" fill="#6366f1"/></svg>
+            </div>
+            <div class="code-node">
+                <div class="code-node-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span>import</span>
+                </div>
+                <pre><code><span class="k">from</span> flashdet <span class="k">import</span> Predictor
+detector = Predictor(
+    pretrained_coco=<span class="v">True</span>
+)</code></pre>
+            </div>
+            <div class="code-edge">
+                <svg viewBox="0 0 60 24"><line x1="0" y1="12" x2="48" y2="12" stroke="#10b981" stroke-width="2" stroke-dasharray="4 3"/><polygon points="46,7 56,12 46,17" fill="#10b981"/></svg>
+            </div>
+            <div class="code-node">
+                <div class="code-node-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span>predict</span>
+                </div>
+                <pre><code>results = detector.predict(
+    <span class="s">"image.jpg"</span>
+)
+<span class="k">for</span> cls, score, box <span class="k">in</span> results:
+    print(f<span class="s">"{cls}: {score:.2f}"</span>)</code></pre>
+            </div>
+        </div>
+        <div class="code-flow code-flow-2">
+            <div class="code-node">
+                <div class="code-node-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span>train</span>
+                </div>
+                <pre><code><span class="k">from</span> flashdet <span class="k">import</span> Trainer
 
 trainer = Trainer(
     pretrained_coco=<span class="v">True</span>,
     lora=<span class="v">True</span>,
-    epochs=<span class="n">50</span>,
-    train_images=<span class="s">"data/train"</span>,
-    val_images=<span class="s">"data/val"</span>,
+    epochs=<span class="n">50</span>
 )
 trainer.train()</code></pre>
+            </div>
+            <div class="code-edge">
+                <svg viewBox="0 0 60 24"><line x1="0" y1="12" x2="48" y2="12" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 3"/><polygon points="46,7 56,12 46,17" fill="#f59e0b"/></svg>
+            </div>
+            <div class="code-node">
+                <div class="code-node-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span>export</span>
                 </div>
-                <div class="code-block">
-                    <div class="code-header"><div class="code-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><span class="code-title">cli</span></div>
-                    <pre><code><span class="c"># Train</span>
-flashdet train --pretrained-coco --lora
-
-<span class="c"># Export</span>
-flashdet export --format onnx --half
-
-<span class="c"># Benchmark</span>
-flashdet benchmark --model m
+                <pre><code><span class="c"># CLI export</span>
+flashdet export \
+    --format onnx \
+    --half
 
 <span class="c"># Launch Studio UI</span>
-pip install flashstudio && flashstudio</code></pre>
-                </div>
+pip install flashstudio
+flashstudio</code></pre>
             </div>
         </div>
     </section>
 
-    <!-- Benchmarks -->
-    <section id="benchmarks" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Performance</span>
-                <h2 class="section-title">Benchmarks</h2>
-                <p class="section-desc">NVIDIA Jetson Nano — INT8 TensorRT</p>
-            </div>
-            <div class="bench-chart">
-                <div class="bench-row"><span class="bench-label">FlashCls-M</span><div class="bench-bar-wrap"><div class="bench-bar" data-width="100" style="background:linear-gradient(90deg,#06b6d4,#67e8f9)"><span>245 FPS</span></div></div></div>
-                <div class="bench-row"><span class="bench-label">FlashOCR-M</span><div class="bench-bar-wrap"><div class="bench-bar" data-width="64" style="background:linear-gradient(90deg,#10b981,#34d399)"><span>156 FPS</span></div></div></div>
-                <div class="bench-row"><span class="bench-label">FlashDet-M</span><div class="bench-bar-wrap"><div class="bench-bar" data-width="58" style="background:linear-gradient(90deg,#6366f1,#818cf8)"><span>142 FPS</span></div></div></div>
-                <div class="bench-row"><span class="bench-label">FlashSeg-M</span><div class="bench-bar-wrap"><div class="bench-bar" data-width="48" style="background:linear-gradient(90deg,#f59e0b,#fbbf24)"><span>118 FPS</span></div></div></div>
-                <div class="bench-row"><span class="bench-label">FlashDet-1.5x</span><div class="bench-bar-wrap"><div class="bench-bar" data-width="40" style="background:linear-gradient(90deg,#ec4899,#f472b6)"><span>97 FPS</span></div></div></div>
+    <!-- Benchmark Graph -->
+    <section id="benchmarks">
+        <div class="section-label">
+            <span class="label-dot"></span>
+            <span>Performance Graph</span>
+        </div>
+        <div class="bench-graph">
+            <canvas id="bench-canvas"></canvas>
+            <div class="bench-legend">
+                <span>Node size = FPS &nbsp;|&nbsp; NVIDIA Jetson Nano — INT8 TensorRT</span>
             </div>
             <div class="bench-table">
-                <table>
-                    <thead><tr><th>Model</th><th>Task</th><th>Params</th><th>mAP/Acc</th><th>FPS</th><th>Latency</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>FlashDet-M</strong></td><td>Detection</td><td>0.95M</td><td>27.3 mAP</td><td class="hl">142</td><td>7.0ms</td></tr>
-                        <tr><td><strong>FlashDet-M-1.5x</strong></td><td>Detection</td><td>2.44M</td><td>31.8 mAP</td><td class="hl">97</td><td>10.3ms</td></tr>
-                        <tr><td><strong>FlashSeg-M</strong></td><td>Segmentation</td><td>1.1M</td><td>72.4 mIoU</td><td class="hl">118</td><td>8.5ms</td></tr>
-                        <tr><td><strong>FlashCls-M</strong></td><td>Classification</td><td>0.58M</td><td>76.2 Top-1</td><td class="hl">245</td><td>4.1ms</td></tr>
-                        <tr><td><strong>FlashOCR-M</strong></td><td>OCR</td><td>0.82M</td><td>94.1 Acc</td><td class="hl">156</td><td>6.4ms</td></tr>
-                    </tbody>
-                </table>
+                <div class="bench-row">
+                    <span class="bench-model">FlashCls-M</span>
+                    <span class="bench-params">0.58M params</span>
+                    <div class="bench-bar-wrap"><div class="bench-bar" style="--w:100%;--c:#06b6d4"></div></div>
+                    <span class="bench-fps">245 FPS</span>
+                </div>
+                <div class="bench-row">
+                    <span class="bench-model">FlashOCR-M</span>
+                    <span class="bench-params">0.82M params</span>
+                    <div class="bench-bar-wrap"><div class="bench-bar" style="--w:64%;--c:#10b981"></div></div>
+                    <span class="bench-fps">156 FPS</span>
+                </div>
+                <div class="bench-row">
+                    <span class="bench-model">FlashDet-M</span>
+                    <span class="bench-params">0.95M params</span>
+                    <div class="bench-bar-wrap"><div class="bench-bar" style="--w:58%;--c:#6366f1"></div></div>
+                    <span class="bench-fps">142 FPS</span>
+                </div>
+                <div class="bench-row">
+                    <span class="bench-model">FlashSeg-M</span>
+                    <span class="bench-params">1.1M params</span>
+                    <div class="bench-bar-wrap"><div class="bench-bar" style="--w:48%;--c:#f59e0b"></div></div>
+                    <span class="bench-fps">118 FPS</span>
+                </div>
+                <div class="bench-row">
+                    <span class="bench-model">FlashDet-1.5x</span>
+                    <span class="bench-params">2.44M params</span>
+                    <div class="bench-bar-wrap"><div class="bench-bar" style="--w:40%;--c:#ec4899"></div></div>
+                    <span class="bench-fps">97 FPS</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pipeline (Node-Edge Flow) -->
-    <section id="pipeline" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pipeline</span>
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-desc">A directed graph from data to deployment</p>
-            </div>
-            <div class="flow-graph">
-                <div class="flow-node">
-                    <div class="flow-circle" style="border-color:#6366f1"><svg width="22" height="22" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-                    <h4>Build</h4>
-                    <p>24+ architectures</p>
+    <!-- Pipeline Flow Graph -->
+    <section id="pipeline">
+        <div class="section-label">
+            <span class="label-dot"></span>
+            <span>Pipeline Flow</span>
+        </div>
+        <div class="pipeline-graph">
+            <canvas id="pipeline-canvas"></canvas>
+            <div class="pipeline-nodes">
+                <div class="pipeline-node" style="--nc:#6366f1">
+                    <div class="pipeline-circle">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <span class="pipeline-label">Build</span>
+                    <span class="pipeline-sub">24+ architectures</span>
                 </div>
-                <div class="flow-edge"><svg width="60" height="20"><line x1="0" y1="10" x2="60" y2="10" stroke="#6366f1" stroke-width="2" stroke-dasharray="4,3"/><polygon points="55,6 60,10 55,14" fill="#6366f1"/></svg></div>
-                <div class="flow-node">
-                    <div class="flow-circle" style="border-color:#10b981"><svg width="22" height="22" fill="none" stroke="#34d399" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-                    <h4>Train</h4>
-                    <p>LoRA + FlashStudio</p>
+                <div class="pipeline-arrow">
+                    <svg viewBox="0 0 100 24"><line x1="0" y1="12" x2="84" y2="12" stroke="#6366f1" stroke-width="2" stroke-dasharray="6 4"/><polygon points="80,6 94,12 80,18" fill="#6366f1"/></svg>
                 </div>
-                <div class="flow-edge"><svg width="60" height="20"><line x1="0" y1="10" x2="60" y2="10" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3"/><polygon points="55,6 60,10 55,14" fill="#10b981"/></svg></div>
-                <div class="flow-node">
-                    <div class="flow-circle" style="border-color:#f59e0b"><svg width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
-                    <h4>Optimize</h4>
-                    <p>FlashOptim</p>
+                <div class="pipeline-node" style="--nc:#10b981">
+                    <div class="pipeline-circle">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <span class="pipeline-label">Train</span>
+                    <span class="pipeline-sub">LoRA + FlashStudio</span>
                 </div>
-                <div class="flow-edge"><svg width="60" height="20"><line x1="0" y1="10" x2="60" y2="10" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3"/><polygon points="55,6 60,10 55,14" fill="#f59e0b"/></svg></div>
-                <div class="flow-node">
-                    <div class="flow-circle" style="border-color:#ec4899"><svg width="22" height="22" fill="none" stroke="#f472b6" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
-                    <h4>Deploy</h4>
-                    <p>Edge + Cloud</p>
+                <div class="pipeline-arrow">
+                    <svg viewBox="0 0 100 24"><line x1="0" y1="12" x2="84" y2="12" stroke="#10b981" stroke-width="2" stroke-dasharray="6 4"/><polygon points="80,6 94,12 80,18" fill="#10b981"/></svg>
+                </div>
+                <div class="pipeline-node" style="--nc:#f59e0b">
+                    <div class="pipeline-circle">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <span class="pipeline-label">Optimize</span>
+                    <span class="pipeline-sub">FlashOptim</span>
+                </div>
+                <div class="pipeline-arrow">
+                    <svg viewBox="0 0 100 24"><line x1="0" y1="12" x2="84" y2="12" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 4"/><polygon points="80,6 94,12 80,18" fill="#f59e0b"/></svg>
+                </div>
+                <div class="pipeline-node" style="--nc:#ec4899">
+                    <div class="pipeline-circle">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </div>
+                    <span class="pipeline-label">Deploy</span>
+                    <span class="pipeline-sub">Edge + Cloud</span>
                 </div>
             </div>
         </div>
@@ -465,17 +470,20 @@ pip install flashstudio && flashstudio</code></pre>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="" width="32" height="32"><strong>FlashVision</strong></div>
-                    <p>Open-source AI research organization.<br>Production-ready AI from edge to cloud.</p>
-                </div>
-                <div class="footer-col"><h4>Vision</h4><a href="https://github.com/FlashVision/FlashDet">FlashDet</a><a href="https://github.com/FlashVision/FlashSeg">FlashSeg</a><a href="https://github.com/FlashVision/FlashCls">FlashCls</a><a href="https://github.com/FlashVision/FlashOCR">FlashOCR</a></div>
-                <div class="footer-col"><h4>GenAI</h4><a href="https://github.com/FlashVision/FlashLLM">FlashLLM</a><a href="https://github.com/FlashVision/FlashDiffusion">FlashDiffusion</a><a href="https://github.com/FlashVision/FlashVideo">FlashVideo</a><a href="https://github.com/FlashVision/Flash3D">Flash3D</a></div>
-                <div class="footer-col"><h4>Infra & Tools</h4><a href="https://github.com/FlashVision/FlashStudio">FlashStudio</a><a href="https://github.com/FlashVision/FlashTrain">FlashTrain</a><a href="https://github.com/FlashVision/FlashOptim">FlashOptim</a><a href="https://github.com/FlashVision/FlashEdge">FlashEdge</a></div>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="" width="20" height="20">
+                <span>FlashVision</span>
             </div>
-            <div class="footer-bottom"><p>MIT License &middot; Built by <a href="https://github.com/Gaurav14cs17">Gaurav14cs17</a> &middot; <a href="https://github.com/FlashVision">FlashVision</a></p></div>
+            <div class="footer-links">
+                <a href="https://github.com/FlashVision" target="_blank">GitHub</a>
+                <a href="https://github.com/FlashVision/FlashDet" target="_blank">FlashDet</a>
+                <a href="https://github.com/FlashVision/FlashStudio" target="_blank">FlashStudio</a>
+                <a href="https://github.com/FlashVision/FlashTrain" target="_blank">FlashTrain</a>
+            </div>
+            <div class="footer-right">
+                <span>MIT &middot; Built by <a href="https://github.com/Gaurav14cs17" target="_blank">Gaurav14cs17</a></span>
+            </div>
         </div>
     </footer>
 
