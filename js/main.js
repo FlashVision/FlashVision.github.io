@@ -78,6 +78,7 @@ function initGraphBackground() {
 function initHeroParticles() {
     const canvas = document.getElementById('hero-edges-canvas');
     if (!canvas) return;
+    if (getComputedStyle(canvas).display === 'none') return;
     const ctx = canvas.getContext('2d');
 
     function resize() {
