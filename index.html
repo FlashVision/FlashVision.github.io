@@ -10,63 +10,110 @@
     <link rel="icon" href="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Nav -->
-    <nav>
+    <nav id="navbar">
         <div class="container nav-inner">
             <a href="#" class="logo">
-                <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="30" height="30">
+                <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="32" height="32">
                 <span>FlashVision</span>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#projects">Projects</a>
                 <a href="#quickstart">Quick Start</a>
                 <a href="#benchmarks">Benchmarks</a>
-                <a href="https://github.com/FlashVision" target="_blank" class="nav-gh">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                <a href="#workflow">How It Works</a>
+                <a href="https://github.com/FlashVision" target="_blank" class="btn-nav-gh">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    <span>GitHub</span>
                 </a>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero -->
     <header class="hero">
-        <div class="container">
-
-            <h1>The Open-Source<br><span class="accent">AI Research</span> Organization</h1>
-            <p class="hero-desc">We build and maintain 24+ projects across computer vision, language models, generative AI, and edge deployment — all open source.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn-primary">Explore Projects</a>
-                <a href="https://github.com/FlashVision" target="_blank" class="btn-outline">GitHub Organization</a>
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="hero-badge fade-in">
+                <span class="pulse-dot"></span>
+                Open Source &middot; Production Ready &middot; Edge Optimized
             </div>
-            <div class="hero-install">
-                <code>pip install flashdet flashstudio flashseg flashcls</code>
+            <h1 class="fade-in">Building the Future of<br><span class="gradient-text">AI Research</span></h1>
+            <p class="hero-desc fade-in">We design, build, and maintain 24+ open-source projects across computer vision, language models, generative AI, and edge deployment.</p>
+            <div class="hero-btns fade-in">
+                <a href="#projects" class="btn-primary">
+                    <span>Explore Projects</span>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/FlashVision" target="_blank" class="btn-glass">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    <span>Star on GitHub</span>
+                </a>
+            </div>
+            <div class="hero-terminal fade-in">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-cmd" id="typed-cmd"></span>
+                    <span class="terminal-cursor">|</span>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Stats -->
     <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <span class="stat-num">24+</span>
-                <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">5</span>
-                <span class="stat-label">Categories</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">100+</span>
-                <span class="stat-label">FPS on Edge</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">0.3M</span>
-                <span class="stat-label">Min Params</span>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                    </div>
+                    <span class="stat-num" data-target="24">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    </div>
+                    <span class="stat-num" data-target="5">0</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <span class="stat-num" data-target="142">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">FPS on Edge</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4v6l4 2"/></svg>
+                    </div>
+                    <span class="stat-num" data-target="0.3">0</span>
+                    <span class="stat-suffix">M</span>
+                    <span class="stat-label">Min Parameters</span>
+                </div>
             </div>
         </div>
     </section>
@@ -74,186 +121,233 @@
     <!-- Projects -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Our Projects</h2>
-            <p class="section-desc">24+ open-source projects across 5 research areas.</p>
+            <div class="section-header fade-in">
+                <span class="section-tag">Ecosystem</span>
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-desc">24+ open-source projects across 5 research areas — from edge vision to generative AI.</p>
+            </div>
 
-            <!-- Featured Projects (3 cards) -->
+            <!-- Featured Projects -->
             <div class="featured-grid">
-                <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="card featured">
-                    <div class="card-top">
-                        <strong>FlashDet</strong>
-                        <span class="badge badge-star">Flagship</span>
+                <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="project-card flagship fade-in">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                        </div>
+                        <span class="badge flagship-badge">Flagship</span>
                     </div>
-                    <p>Real-time object detection. ShuffleNetV2 + GhostPAN. 0.3M–9M params, 100+ FPS on edge devices.</p>
-                    <div class="tags"><span>Detection</span><span>Edge AI</span><span>LoRA</span></div>
+                    <h3>FlashDet</h3>
+                    <p>Real-time object detection. ShuffleNetV2 + GhostPAN architecture. 0.3M–9M params, 100+ FPS on edge devices.</p>
+                    <div class="card-tags">
+                        <span>Detection</span><span>Edge AI</span><span>LoRA</span>
+                    </div>
+                    <div class="card-arrow">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
                 </a>
-                <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="card featured">
-                    <div class="card-top">
-                        <strong>FlashStudio</strong>
-                        <span class="badge badge-new">New</span>
+
+                <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="project-card new fade-in">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <span class="badge new-badge">New</span>
                     </div>
-                    <p>Interactive training &amp; inference UI. Streamlit dashboard for the entire ecosystem. <code>pip install flashstudio</code></p>
-                    <div class="tags"><span>UI</span><span>Streamlit</span><span>Training</span></div>
+                    <h3>FlashStudio</h3>
+                    <p>Interactive training &amp; inference UI. Streamlit dashboard for the entire FlashVision ecosystem.</p>
+                    <div class="card-tags">
+                        <span>UI</span><span>Streamlit</span><span>Training</span>
+                    </div>
+                    <div class="card-arrow">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
                 </a>
-                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="card featured">
-                    <div class="card-top">
-                        <strong>FlashDiffusion</strong>
-                        <span class="badge badge-star">Popular</span>
+
+                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="project-card popular fade-in">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span class="badge popular-badge">Popular</span>
                     </div>
+                    <h3>FlashDiffusion</h3>
                     <p>Diffusion models for image generation — fast sampling, ControlNet, LoRA, and SDXL support.</p>
-                    <div class="tags"><span>Diffusion</span><span>GenAI</span><span>ControlNet</span></div>
+                    <div class="card-tags">
+                        <span>Diffusion</span><span>GenAI</span><span>ControlNet</span>
+                    </div>
+                    <div class="card-arrow">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
                 </a>
             </div>
 
-            <!-- All Projects - Compact Table -->
-            <div class="projects-table">
-                <div class="pt-header">
-                    <span>Project</span>
-                    <span>Category</span>
-                    <span>Description</span>
-                </div>
-                <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashDet</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Real-time object detection for edge devices</span>
+            <!-- Category Filter -->
+            <div class="category-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vision">Vision</button>
+                <button class="filter-btn" data-filter="genai">GenAI</button>
+                <button class="filter-btn" data-filter="infra">Infra</button>
+                <button class="filter-btn" data-filter="applied">Applied</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <a href="https://github.com/FlashVision/FlashDet" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashDet</span>
+                    <span class="mini-desc">Real-time object detection for edge devices</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashSeg" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashSeg</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Semantic &amp; instance segmentation</span>
+                <a href="https://github.com/FlashVision/FlashSeg" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashSeg</span>
+                    <span class="mini-desc">Semantic &amp; instance segmentation</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashCls" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashCls</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Image classification for mobile</span>
+                <a href="https://github.com/FlashVision/FlashCls" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashCls</span>
+                    <span class="mini-desc">Image classification for mobile</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashOCR" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashOCR</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Scene text detection &amp; recognition</span>
+                <a href="https://github.com/FlashVision/FlashOCR" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashOCR</span>
+                    <span class="mini-desc">Scene text detection &amp; recognition</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashPose" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashPose</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Human pose estimation &amp; keypoints</span>
+                <a href="https://github.com/FlashVision/FlashPose" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashPose</span>
+                    <span class="mini-desc">Human pose estimation &amp; keypoints</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashTrack" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashTrack</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Multi-object tracking (DeepSORT, ByteTrack)</span>
+                <a href="https://github.com/FlashVision/FlashTrack" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashTrack</span>
+                    <span class="mini-desc">Multi-object tracking (DeepSORT, ByteTrack)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashDepth" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashDepth</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Monocular depth estimation</span>
+                <a href="https://github.com/FlashVision/FlashDepth" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashDepth</span>
+                    <span class="mini-desc">Monocular depth estimation</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashFace" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashFace</span>
-                    <span class="pt-cat">Vision</span>
-                    <span class="pt-desc">Face detection, recognition &amp; analysis</span>
+                <a href="https://github.com/FlashVision/FlashFace" target="_blank" class="mini-card fade-in" data-category="vision">
+                    <span class="mini-name">FlashFace</span>
+                    <span class="mini-desc">Face detection, recognition &amp; analysis</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashLLM" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashLLM</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">Lightweight language models</span>
+                <a href="https://github.com/FlashVision/FlashLLM" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">FlashLLM</span>
+                    <span class="mini-desc">Lightweight language models</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashVLM" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashVLM</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">Vision-Language multimodal models</span>
+                <a href="https://github.com/FlashVision/FlashVLM" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">FlashVLM</span>
+                    <span class="mini-desc">Vision-Language multimodal models</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashDiffusion</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">Image generation with diffusion models</span>
+                <a href="https://github.com/FlashVision/FlashDiffusion" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">FlashDiffusion</span>
+                    <span class="mini-desc">Image generation with diffusion models</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashVideo" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashVideo</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">Video generation &amp; understanding</span>
+                <a href="https://github.com/FlashVision/FlashVideo" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">FlashVideo</span>
+                    <span class="mini-desc">Video generation &amp; understanding</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/Flash3D" target="_blank" class="pt-row">
-                    <span class="pt-name">Flash3D</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">3D generation (NeRF, Gaussian Splatting)</span>
+                <a href="https://github.com/FlashVision/Flash3D" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">Flash3D</span>
+                    <span class="mini-desc">3D generation (NeRF, Gaussian Splatting)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashAudio" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashAudio</span>
-                    <span class="pt-cat">GenAI</span>
-                    <span class="pt-desc">Speech, TTS &amp; audio classification</span>
+                <a href="https://github.com/FlashVision/FlashAudio" target="_blank" class="mini-card fade-in" data-category="genai">
+                    <span class="mini-name">FlashAudio</span>
+                    <span class="mini-desc">Speech, TTS &amp; audio classification</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashOptim" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashOptim</span>
-                    <span class="pt-cat">Infra</span>
-                    <span class="pt-desc">Pruning, quantization &amp; distillation</span>
+                <a href="https://github.com/FlashVision/FlashOptim" target="_blank" class="mini-card fade-in" data-category="infra">
+                    <span class="mini-name">FlashOptim</span>
+                    <span class="mini-desc">Pruning, quantization &amp; distillation</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashEdge" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashEdge</span>
-                    <span class="pt-cat">Infra</span>
-                    <span class="pt-desc">Edge deployment (Jetson, RPi, mobile)</span>
+                <a href="https://github.com/FlashVision/FlashEdge" target="_blank" class="mini-card fade-in" data-category="infra">
+                    <span class="mini-name">FlashEdge</span>
+                    <span class="mini-desc">Edge deployment (Jetson, RPi, mobile)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashInfer" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashInfer</span>
-                    <span class="pt-cat">Infra</span>
-                    <span class="pt-desc">High-performance inference engine</span>
+                <a href="https://github.com/FlashVision/FlashInfer" target="_blank" class="mini-card fade-in" data-category="infra">
+                    <span class="mini-name">FlashInfer</span>
+                    <span class="mini-desc">High-performance inference engine</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashDownUP" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashDownUP</span>
-                    <span class="pt-cat">Infra</span>
-                    <span class="pt-desc">Image super-resolution &amp; upscaling</span>
+                <a href="https://github.com/FlashVision/FlashDownUP" target="_blank" class="mini-card fade-in" data-category="infra">
+                    <span class="mini-name">FlashDownUP</span>
+                    <span class="mini-desc">Image super-resolution &amp; upscaling</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashFusion" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashFusion</span>
-                    <span class="pt-cat">Infra</span>
-                    <span class="pt-desc">Multi-sensor fusion (LiDAR + Camera)</span>
+                <a href="https://github.com/FlashVision/FlashFusion" target="_blank" class="mini-card fade-in" data-category="infra">
+                    <span class="mini-name">FlashFusion</span>
+                    <span class="mini-desc">Multi-sensor fusion (LiDAR + Camera)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashMed" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashMed</span>
-                    <span class="pt-cat">Applied</span>
-                    <span class="pt-desc">Medical imaging (X-ray, CT, MRI)</span>
+                <a href="https://github.com/FlashVision/FlashMed" target="_blank" class="mini-card fade-in" data-category="applied">
+                    <span class="mini-name">FlashMed</span>
+                    <span class="mini-desc">Medical imaging (X-ray, CT, MRI)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashRAG" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashRAG</span>
-                    <span class="pt-cat">Applied</span>
-                    <span class="pt-desc">Retrieval-Augmented Generation pipelines</span>
+                <a href="https://github.com/FlashVision/FlashRAG" target="_blank" class="mini-card fade-in" data-category="applied">
+                    <span class="mini-name">FlashRAG</span>
+                    <span class="mini-desc">Retrieval-Augmented Generation pipelines</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashAgent" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashAgent</span>
-                    <span class="pt-cat">Applied</span>
-                    <span class="pt-desc">AI agent framework with tool use</span>
+                <a href="https://github.com/FlashVision/FlashAgent" target="_blank" class="mini-card fade-in" data-category="applied">
+                    <span class="mini-name">FlashAgent</span>
+                    <span class="mini-desc">AI agent framework with tool use</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/VisionRL" target="_blank" class="pt-row">
-                    <span class="pt-name">VisionRL</span>
-                    <span class="pt-cat">Applied</span>
-                    <span class="pt-desc">Reinforcement learning for vision</span>
+                <a href="https://github.com/FlashVision/VisionRL" target="_blank" class="mini-card fade-in" data-category="applied">
+                    <span class="mini-name">VisionRL</span>
+                    <span class="mini-desc">Reinforcement learning for vision</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashTrain" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashTrain</span>
-                    <span class="pt-cat">Tools</span>
-                    <span class="pt-desc">Training utilities (LoRA, AMP, distributed)</span>
+                <a href="https://github.com/FlashVision/FlashTrain" target="_blank" class="mini-card fade-in" data-category="tools">
+                    <span class="mini-name">FlashTrain</span>
+                    <span class="mini-desc">Training utilities (LoRA, AMP, distributed)</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
-                <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="pt-row">
-                    <span class="pt-name">FlashStudio</span>
-                    <span class="pt-cat">Tools</span>
-                    <span class="pt-desc">Interactive training &amp; inference UI</span>
+                <a href="https://github.com/FlashVision/FlashStudio" target="_blank" class="mini-card fade-in" data-category="tools">
+                    <span class="mini-name">FlashStudio</span>
+                    <span class="mini-desc">Interactive training &amp; inference UI</span>
+                    <span class="mini-arrow">&rarr;</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Quick Start -->
-    <section id="quickstart" class="section section-alt">
+    <section id="quickstart" class="section section-dark">
         <div class="container">
-            <h2 class="section-title">Quick Start</h2>
-            <p class="section-desc">From install to inference in under 60 seconds.</p>
+            <div class="section-header fade-in">
+                <span class="section-tag">Get Started</span>
+                <h2 class="section-title">Quick Start</h2>
+                <p class="section-desc">From install to inference in under 60 seconds.</p>
+            </div>
 
-            <div class="code-examples">
-                <div class="code-block">
+            <div class="code-grid">
+                <div class="code-block fade-in">
                     <div class="code-header">
-                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                        <span class="code-title">Detection</span>
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">detection.py</span>
+                        <button class="copy-btn" data-code="pip install flashdet&#10;from flashdet import Predictor&#10;detector = Predictor(pretrained_coco=True)&#10;results = detector.predict('image.jpg')">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
                     </div>
-                    <pre><span class="c"># Install</span>
+                    <pre><code><span class="c"># Install</span>
 pip install flashdet
 
 <span class="c"># Python API</span>
@@ -263,15 +357,22 @@ detector = Predictor(pretrained_coco=<span class="v">True</span>)
 results = detector.predict(<span class="s">"image.jpg"</span>)
 
 <span class="k">for</span> cls, score, x1, y1, x2, y2 <span class="k">in</span> results:
-    print(f<span class="s">"{cls}: {score:.2f}"</span>)</pre>
+    print(f<span class="s">"{cls}: {score:.2f}"</span>)</code></pre>
                 </div>
 
-                <div class="code-block">
+                <div class="code-block fade-in">
                     <div class="code-header">
-                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                        <span class="code-title">Training</span>
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">train.py</span>
+                        <button class="copy-btn" data-code="from flashdet import Trainer&#10;trainer = Trainer(pretrained_coco=True, lora=True, epochs=50)&#10;trainer.train()">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
                     </div>
-                    <pre><span class="c"># Fine-tune with LoRA on custom data</span>
+                    <pre><code><span class="c"># Fine-tune with LoRA on custom data</span>
 <span class="k">from</span> flashdet <span class="k">import</span> Trainer
 
 trainer = Trainer(
@@ -281,15 +382,22 @@ trainer = Trainer(
     train_images=<span class="s">"data/train"</span>,
     val_images=<span class="s">"data/val"</span>,
 )
-trainer.train()</pre>
+trainer.train()</code></pre>
                 </div>
 
-                <div class="code-block">
+                <div class="code-block fade-in">
                     <div class="code-header">
-                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                        <span class="code-title">FlashStudio UI</span>
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">studio.sh</span>
+                        <button class="copy-btn" data-code="pip install flashstudio&#10;flashstudio">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
                     </div>
-                    <pre><span class="c"># Install FlashStudio</span>
+                    <pre><code><span class="c"># Install FlashStudio</span>
 pip install flashstudio
 
 <span class="c"># Launch interactive dashboard</span>
@@ -298,15 +406,22 @@ flashstudio
 <span class="c"># Opens at http://localhost:8501</span>
 <span class="c"># Features: dataset management,</span>
 <span class="c"># training with live plots, inference,</span>
-<span class="c"># model export &amp; deployment</span></pre>
+<span class="c"># model export &amp; deployment</span></code></pre>
                 </div>
 
-                <div class="code-block">
+                <div class="code-block fade-in">
                     <div class="code-header">
-                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                        <span class="code-title">CLI</span>
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">cli</span>
+                        <button class="copy-btn" data-code="flashdet train --pretrained-coco --lora --epochs 50&#10;flashdet export --format onnx --half&#10;flashdet benchmark --model m --input-size 320">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
                     </div>
-                    <pre><span class="c"># Train from command line</span>
+                    <pre><code><span class="c"># Train from command line</span>
 flashdet train --pretrained-coco --lora --epochs 50
 
 <span class="c"># Export to ONNX</span>
@@ -316,7 +431,7 @@ flashdet export --format onnx --half
 flashdet benchmark --model m --input-size 320
 
 <span class="c"># Download dataset</span>
-flashdet download --dataset coco128</pre>
+flashdet download --dataset coco128</code></pre>
                 </div>
             </div>
         </div>
@@ -325,97 +440,125 @@ flashdet download --dataset coco128</pre>
     <!-- Benchmarks -->
     <section id="benchmarks" class="section">
         <div class="container">
-            <h2 class="section-title">Benchmarks</h2>
-            <p class="section-desc">Performance on NVIDIA Jetson Nano (INT8 TensorRT).</p>
+            <div class="section-header fade-in">
+                <span class="section-tag">Performance</span>
+                <h2 class="section-title">Benchmarks</h2>
+                <p class="section-desc">Performance on NVIDIA Jetson Nano (INT8 TensorRT).</p>
+            </div>
 
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Task</th>
-                            <th>Params</th>
-                            <th>mAP / Acc</th>
-                            <th>FPS</th>
-                            <th>Latency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>FlashDet-M</strong></td>
-                            <td>Detection</td>
-                            <td>0.95M</td>
-                            <td>27.3 mAP</td>
-                            <td class="highlight">142</td>
-                            <td>7.0ms</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FlashDet-M-1.5x</strong></td>
-                            <td>Detection</td>
-                            <td>2.44M</td>
-                            <td>31.8 mAP</td>
-                            <td class="highlight">97</td>
-                            <td>10.3ms</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FlashSeg-M</strong></td>
-                            <td>Segmentation</td>
-                            <td>1.1M</td>
-                            <td>72.4 mIoU</td>
-                            <td class="highlight">118</td>
-                            <td>8.5ms</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FlashCls-M</strong></td>
-                            <td>Classification</td>
-                            <td>0.58M</td>
-                            <td>76.2 Top-1</td>
-                            <td class="highlight">245</td>
-                            <td>4.1ms</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FlashOCR-M</strong></td>
-                            <td>OCR</td>
-                            <td>0.82M</td>
-                            <td>94.1 Acc</td>
-                            <td class="highlight">156</td>
-                            <td>6.4ms</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="benchmark-table fade-in">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Task</th>
+                                <th>Params</th>
+                                <th>mAP / Acc</th>
+                                <th>FPS</th>
+                                <th>Latency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FlashDet-M</strong></td>
+                                <td>Detection</td>
+                                <td>0.95M</td>
+                                <td>27.3 mAP</td>
+                                <td class="highlight">142</td>
+                                <td>7.0ms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FlashDet-M-1.5x</strong></td>
+                                <td>Detection</td>
+                                <td>2.44M</td>
+                                <td>31.8 mAP</td>
+                                <td class="highlight">97</td>
+                                <td>10.3ms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FlashSeg-M</strong></td>
+                                <td>Segmentation</td>
+                                <td>1.1M</td>
+                                <td>72.4 mIoU</td>
+                                <td class="highlight">118</td>
+                                <td>8.5ms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FlashCls-M</strong></td>
+                                <td>Classification</td>
+                                <td>0.58M</td>
+                                <td>76.2 Top-1</td>
+                                <td class="highlight">245</td>
+                                <td>4.1ms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FlashOCR-M</strong></td>
+                                <td>OCR</td>
+                                <td>0.82M</td>
+                                <td>94.1 Acc</td>
+                                <td class="highlight">156</td>
+                                <td>6.4ms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Workflow -->
-    <section class="section section-alt">
+    <section id="workflow" class="section section-dark">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-desc">A complete pipeline from data to deployment.</p>
+            <div class="section-header fade-in">
+                <span class="section-tag">Pipeline</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-desc">A complete pipeline from data to deployment.</p>
+            </div>
 
-            <div class="workflow">
-                <div class="workflow-step">
-                    <div class="step-num">1</div>
+            <div class="workflow-grid">
+                <div class="workflow-card fade-in">
+                    <div class="workflow-num">01</div>
+                    <div class="workflow-line"></div>
                     <h4>Build</h4>
                     <p>Choose from 24+ architectures across vision, language, and generative AI.</p>
                 </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-num">2</div>
+                <div class="workflow-card fade-in">
+                    <div class="workflow-num">02</div>
+                    <div class="workflow-line"></div>
                     <h4>Train</h4>
                     <p>Fine-tune with LoRA/QLoRA, mixed precision, and FlashStudio's visual UI.</p>
                 </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-num">3</div>
+                <div class="workflow-card fade-in">
+                    <div class="workflow-num">03</div>
+                    <div class="workflow-line"></div>
                     <h4>Optimize</h4>
                     <p>Compress with FlashOptim — pruning, quantization, and distillation.</p>
                 </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-num">4</div>
+                <div class="workflow-card fade-in">
+                    <div class="workflow-num">04</div>
+                    <div class="workflow-line"></div>
                     <h4>Deploy</h4>
                     <p>Ship to edge with FlashEdge or serve at scale with FlashInfer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-card fade-in">
+                <h2>Ready to build with FlashVision?</h2>
+                <p>Join the community of developers shipping production AI with open-source tools.</p>
+                <div class="cta-btns">
+                    <a href="https://github.com/FlashVision" target="_blank" class="btn-primary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        <span>Get Started on GitHub</span>
+                    </a>
+                    <a href="#quickstart" class="btn-glass">
+                        <span>Read the Docs</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -430,7 +573,7 @@ flashdet download --dataset coco128</pre>
                         <img src="https://raw.githubusercontent.com/FlashVision/.github/main/assets/logo.png" alt="FlashVision" width="36" height="36">
                         <strong>FlashVision</strong>
                     </div>
-                    <p>Open-source AI research organization. Building production-ready AI from edge to cloud.</p>
+                    <p>Open-source AI research organization.<br>Building production-ready AI from edge to cloud.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Core Vision</h4>
