@@ -1,32 +1,12 @@
-// #region agent log
-function _dbg(msg, data) { fetch('http://127.0.0.1:7702/ingest/b690bd31-4f2a-4d06-a37a-266338fb0f27',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'1737eb'},body:JSON.stringify({sessionId:'1737eb',location:'main.js',message:msg,data:data,timestamp:Date.now()})}).catch(()=>{}); }
-// #endregion
-
 document.addEventListener('DOMContentLoaded', () => {
-    // #region agent log
-    _dbg('DOMContentLoaded fired', {hypothesisId:'E'});
-    // #endregion
-    try { initParticles(); } catch(e) { _dbg('initParticles ERROR', {error:e.message,hypothesisId:'E'}); }
-    try { initNavScroll(); } catch(e) { _dbg('initNavScroll ERROR', {error:e.message,hypothesisId:'E'}); }
-    try { initMobileMenu(); } catch(e) { _dbg('initMobileMenu ERROR', {error:e.message,hypothesisId:'E'}); }
-    try {
-        initScrollReveal();
-        // #region agent log
-        _dbg('initScrollReveal complete', {hypothesisId:'A'});
-        // #endregion
-    } catch(e) { _dbg('initScrollReveal ERROR', {error:e.message,hypothesisId:'A'}); }
-    try {
-        initCounters();
-        // #region agent log
-        _dbg('initCounters complete', {hypothesisId:'B'});
-        // #endregion
-    } catch(e) { _dbg('initCounters ERROR', {error:e.message,hypothesisId:'B'}); }
-    try { initTypingEffect(); } catch(e) { _dbg('initTypingEffect ERROR', {error:e.message,hypothesisId:'E'}); }
-    try { initCategoryFilter(); } catch(e) { _dbg('initCategoryFilter ERROR', {error:e.message,hypothesisId:'C'}); }
-    try { initCopyButtons(); } catch(e) { _dbg('initCopyButtons ERROR', {error:e.message,hypothesisId:'E'}); }
-    // #region agent log
-    _dbg('All init functions complete', {hypothesisId:'E'});
-    // #endregion
+    initParticles();
+    initNavScroll();
+    initMobileMenu();
+    initScrollReveal();
+    initCounters();
+    initTypingEffect();
+    initCategoryFilter();
+    initCopyButtons();
 });
 
 /* ===== Particle Background ===== */
@@ -35,7 +15,6 @@ function initParticles() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let animationId;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -100,7 +79,7 @@ function initParticles() {
             p.draw();
         });
         connectParticles();
-        animationId = requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
     }
     animate();
 }
@@ -148,14 +127,8 @@ function initMobileMenu() {
 /* ===== Scroll Reveal ===== */
 function initScrollReveal() {
     const elements = document.querySelectorAll('.fade-in');
-    // #region agent log
-    _dbg('fade-in elements count', {count:elements.length, hypothesisId:'A'});
-    // #endregion
-    
+
     const observer = new IntersectionObserver((entries) => {
-        // #region agent log
-        _dbg('IntersectionObserver fired', {entriesCount:entries.length, intersectingCount:entries.filter(e=>e.isIntersecting).length, hypothesisId:'A'});
-        // #endregion
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
@@ -175,15 +148,9 @@ function initScrollReveal() {
 /* ===== Animated Counters ===== */
 function initCounters() {
     const counters = document.querySelectorAll('.stat-num[data-target]');
-    // #region agent log
-    _dbg('counters found', {count:counters.length, hypothesisId:'B'});
-    // #endregion
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // #region agent log
-            _dbg('counter observer entry', {isIntersecting:entry.isIntersecting, target:entry.target.dataset.target, ratio:entry.intersectionRatio, hypothesisId:'B'});
-            // #endregion
             if (entry.isIntersecting) {
                 animateCounter(entry.target);
                 observer.unobserve(entry.target);
@@ -237,34 +204,33 @@ function initTypingEffect() {
     let cmdIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let timeout;
 
     function type() {
         const current = commands[cmdIndex];
-        
+
         if (!isDeleting) {
             cmdEl.textContent = current.substring(0, charIndex + 1);
             charIndex++;
-            
+
             if (charIndex === current.length) {
-                timeout = setTimeout(() => {
+                setTimeout(() => {
                     isDeleting = true;
                     type();
                 }, 2500);
                 return;
             }
-            timeout = setTimeout(type, 40 + Math.random() * 30);
+            setTimeout(type, 40 + Math.random() * 30);
         } else {
             cmdEl.textContent = current.substring(0, charIndex - 1);
             charIndex--;
-            
+
             if (charIndex === 0) {
                 isDeleting = false;
                 cmdIndex = (cmdIndex + 1) % commands.length;
-                timeout = setTimeout(type, 400);
+                setTimeout(type, 400);
                 return;
             }
-            timeout = setTimeout(type, 20);
+            setTimeout(type, 20);
         }
     }
 
@@ -275,18 +241,17 @@ function initTypingEffect() {
 function initCategoryFilter() {
     const buttons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.mini-card');
-    
+
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const filter = btn.dataset.filter;
-            
+
             cards.forEach(card => {
                 if (filter === 'all' || card.dataset.category === filter) {
                     card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.3s ease forwards';
                 } else {
                     card.classList.add('hidden');
                 }
@@ -301,11 +266,11 @@ function initCopyButtons() {
         btn.addEventListener('click', () => {
             const code = btn.dataset.code;
             if (!code) return;
-            
+
             navigator.clipboard.writeText(code).then(() => {
                 btn.classList.add('copied');
                 btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>';
-                
+
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
