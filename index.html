@@ -637,55 +637,30 @@ $ flashstudio
                 <p class="section-subtitle">Every project is designed to work together. Train with FlashTrain, optimize with FlashOptim, deploy with FlashEdge, and manage it all from FlashStudio.</p>
             </div>
 
-            <div class="ecosystem-diagram">
-                <div class="eco-ring eco-ring-outer">
-                    <div class="eco-node eco-node-top" data-label="FlashDet">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            <div class="eco-grid-layout">
+                <div class="eco-grid-row">
+                    <div class="eco-grid-group">
+                        <h4>Models</h4>
+                        <div class="eco-tags">
+                            <span>FlashDet</span><span>FlashSeg</span><span>FlashCls</span>
+                            <span>FlashOCR</span><span>FlashPose</span><span>FlashTrack</span>
+                            <span>FlashLLM</span><span>FlashVLM</span><span>FlashDiffusion</span>
+                        </div>
                     </div>
-                    <div class="eco-node eco-node-topright" data-label="FlashSeg">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+                    <div class="eco-grid-arrow">→</div>
+                    <div class="eco-grid-hub">
+                        <div class="eco-hub-icon">⚡</div>
+                        <strong>FlashStudio</strong>
+                        <small>Central Platform</small>
                     </div>
-                    <div class="eco-node eco-node-right" data-label="FlashLLM">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <div class="eco-grid-arrow">→</div>
+                    <div class="eco-grid-group">
+                        <h4>Deploy</h4>
+                        <div class="eco-tags">
+                            <span>FlashOptim</span><span>FlashEdge</span>
+                            <span>FlashInfer</span><span>ONNX</span>
+                        </div>
                     </div>
-                    <div class="eco-node eco-node-bottomright" data-label="FlashDiffusion">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-                    </div>
-                    <div class="eco-node eco-node-bottom" data-label="FlashMed">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div class="eco-node eco-node-bottomleft" data-label="FlashAudio">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/></svg>
-                    </div>
-                    <div class="eco-node eco-node-left" data-label="FlashCls">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-                    </div>
-                    <div class="eco-node eco-node-topleft" data-label="FlashOCR">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                    </div>
-                </div>
-
-                <div class="eco-ring eco-ring-middle">
-                    <div class="eco-mid-node eco-mid-top" data-label="FlashOptim">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <div class="eco-mid-node eco-mid-right" data-label="FlashInfer">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div class="eco-mid-node eco-mid-bottom" data-label="FlashEdge">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-                    </div>
-                    <div class="eco-mid-node eco-mid-left" data-label="FlashTrain">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
-                </div>
-
-                <div class="eco-center">
-                    <div class="eco-center-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                    </div>
-                    <span class="eco-center-label">FlashStudio</span>
-                    <span class="eco-center-sublabel">Central Platform</span>
                 </div>
             </div>
 
